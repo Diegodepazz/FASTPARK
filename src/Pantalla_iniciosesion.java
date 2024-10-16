@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Panel3 extends General {
-    public Panel3(){
+public class Pantalla_iniciosesion extends General {
+    public Pantalla_iniciosesion(){
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -17,7 +17,7 @@ public class Panel3 extends General {
         //TEXTO REGISTRO
         JLabel bienvenida = new JLabel();
         bienvenida.setText("INICIAR SESIÓN");
-        bienvenida.setBounds(130, 280, 500, 100);
+        bienvenida.setBounds(295, 280, 500, 100);
         bienvenida.setForeground(Color.red);
         bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(bienvenida);
@@ -27,7 +27,7 @@ public class Panel3 extends General {
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("INICIAR SESIÓN");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(260, 430, 220, 40);
+        botonprincipal.setBounds(260, 560, 220, 40);
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal.setBackground(Color.RED);

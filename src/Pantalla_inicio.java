@@ -16,14 +16,14 @@ public class Pantalla_inicio extends General {
 
         //TEXTO REGISTRO
         JLabel bienvenida = new JLabel();
-        bienvenida.setText("REGÍSTRESE O INICIE SESIÓN PARA CONTINUAR");
+        bienvenida.setText("INICIE SESIÓN O REGÍSTRESE PARA CONTINUAR");
         bienvenida.setBounds(130, 280, 500, 100);
         bienvenida.setForeground(Color.red);
         bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(bienvenida);
 
 
-        //AGREGAR BOTON REGISTRO
+        //AGREGAR BOTON INICIO DE SESIÓN
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("INICIAR SESIÓN");
         botonprincipal.setFocusable(false);
@@ -40,11 +40,11 @@ public class Pantalla_inicio extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Panel3();
+                new Pantalla_iniciosesion();
             }
         });
 
-        //AGREGAR BOTON1 INICIO SESIÓN
+        //AGREGAR BOTON1 REGISTRAR CUENTA
         ImageIcon imagenboton1 = new ImageIcon("");
         JButton botonprincipal1 = new JButton("REGISTRAR CUENTA");
         botonprincipal1.setFocusable(false);
@@ -61,7 +61,7 @@ public class Pantalla_inicio extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Panel4();
+                new Pantalla_registro();
             }
         });
 
