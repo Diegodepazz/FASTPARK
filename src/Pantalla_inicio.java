@@ -31,7 +31,9 @@ public class Pantalla_inicio extends General {
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 15));
         botonprincipal.setBackground(Color.RED);
-        botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        //Nuevo
+        botonprincipal.setOpaque(true);
+        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
@@ -52,7 +54,9 @@ public class Pantalla_inicio extends General {
         botonprincipal1.setForeground(Color.white);
         botonprincipal1.setFont(new Font("Arial", Font.BOLD, 15));
         botonprincipal1.setBackground(Color.red);
-        botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        //Nuevo
+        botonprincipal1.setOpaque(true);
+        //botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal1.setBorderPainted(false);
         panelPrincipal.add(botonprincipal1);
 
