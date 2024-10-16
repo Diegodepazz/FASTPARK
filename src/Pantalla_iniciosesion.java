@@ -16,8 +16,8 @@ public class Pantalla_iniciosesion extends General {
 
         //TEXTO REGISTRO
         JLabel bienvenida = new JLabel();
-        bienvenida.setText("INICIAR SESIÓN");
-        bienvenida.setBounds(295, 280, 500, 100);
+        bienvenida.setText("INGRESE SUS DATOS PARA ACCEDER");
+        bienvenida.setBounds(172, 260, 500, 100);
         bienvenida.setForeground(Color.red);
         bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(bienvenida);
@@ -27,9 +27,9 @@ public class Pantalla_iniciosesion extends General {
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("INICIAR SESIÓN");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(260, 560, 220, 40);
+        botonprincipal.setBounds(260, 610, 220, 40);
         botonprincipal.setForeground(Color.white);
-        botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
+        botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
         botonprincipal.setBackground(Color.RED);
         botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
@@ -43,6 +43,27 @@ public class Pantalla_iniciosesion extends General {
                 PanelPrincipal vuelvo = new PanelPrincipal();
             }
         });
+
+        // AGREGAR CAMPO CORREO
+        JLabel etiquetaCorreo = new JLabel("Correo:");
+        etiquetaCorreo.setBounds(100, 400, 100, 30);
+        panelPrincipal.add(etiquetaCorreo);
+
+        // CAMPO CORREO
+        JTextField campoCorreo = new JTextField();
+        campoCorreo.setBounds(200, 400, 300, 30);
+        panelPrincipal.add(campoCorreo);
+
+
+        // AGREGAR CAMPO CONTRASEÑA
+        JLabel etiquetaContrasena = new JLabel("Contraseña:");
+        etiquetaContrasena.setBounds(100, 450, 100, 30);
+        panelPrincipal.add(etiquetaContrasena);
+
+        // CAMPO CONTRASEÑA
+        JPasswordField campoContrasena = new JPasswordField();
+        campoContrasena.setBounds(200, 450, 300, 30);
+        panelPrincipal.add(campoContrasena);
 
 
         //AGREGAR IMAGEN LOGO

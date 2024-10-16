@@ -7,6 +7,7 @@ import static java.awt.Font.*;
 
 public class PanelPrincipal extends General {
     public PanelPrincipal(){
+
         //VENTANA
         JFrame ventanaPrincipal =  crearventana();
 

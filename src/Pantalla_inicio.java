@@ -29,7 +29,7 @@ public class Pantalla_inicio extends General {
         botonprincipal.setFocusable(false);
         botonprincipal.setBounds(260, 430, 220, 40);
         botonprincipal.setForeground(Color.white);
-        botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
+        botonprincipal.setFont(new Font("Arial", Font.BOLD, 15));
         botonprincipal.setBackground(Color.RED);
         botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
@@ -50,7 +50,7 @@ public class Pantalla_inicio extends General {
         botonprincipal1.setFocusable(false);
         botonprincipal1.setBounds(260, 520, 220, 40);
         botonprincipal1.setForeground(Color.white);
-        botonprincipal1.setFont(new Font("Arial", Font.BOLD, 16));
+        botonprincipal1.setFont(new Font("Arial", Font.BOLD, 15));
         botonprincipal1.setBackground(Color.red);
         botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal1.setBorderPainted(false);
