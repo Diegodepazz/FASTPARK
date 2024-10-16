@@ -3,13 +3,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.awt.Font.*;
-
-public class PanelPrincipal extends General {
-    public PanelPrincipal(){
-
+public class Pantalla_opciones extends General {
+    public Pantalla_opciones(){
         //VENTANA
-        JFrame ventanaPrincipal =  crearventana();
+        JFrame ventanaPrincipal = crearventana();
 
         //PANEL
         JPanel panelPrincipal = new JPanel();
@@ -17,13 +14,22 @@ public class PanelPrincipal extends General {
         panelPrincipal.setBackground(Color.white);
         ventanaPrincipal.add(panelPrincipal);
 
-        //AGREGAR BOTON
+        //TEXTO REGISTRO
+        JLabel bienvenida = new JLabel();
+        bienvenida.setText("INGRESE SUS DATOS PARA ACCEDER");
+        bienvenida.setBounds(172, 260, 500, 100);
+        bienvenida.setForeground(Color.red);
+        bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
+        panelPrincipal.add(bienvenida);
+
+
+        //AGREGAR BOTON INICIAR SESIÓN
         ImageIcon imagenboton = new ImageIcon("");
-        JButton botonprincipal = new JButton("INICIAR");
+        JButton botonprincipal = new JButton("INICIAR SESIÓN");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(260, 550, 220, 40);
+        botonprincipal.setBounds(260, 600, 220, 40);
         botonprincipal.setForeground(Color.white);
-        botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
+        botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
         botonprincipal.setBackground(Color.RED);
         //Nuevo
         botonprincipal.setOpaque(true);
@@ -36,26 +42,19 @@ public class PanelPrincipal extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_inicio();
+                PanelPrincipal vuelvo = new PanelPrincipal();
             }
         });
 
         //AGREGAR IMAGEN LOGO
         ImageIcon imagenlogo = new ImageIcon("Imagenes/LOGO.png");
         JLabel logo = new JLabel();
-        logo.setBounds(100,100,516,155);
+        logo.setBounds(100,100,520,155);
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(logo);
 
-        // AGREGAR SEGUNDO LOGO (COCHE INICIO)
-        ImageIcon imagencocheinicio = new ImageIcon("Imagenes/LOGO_INICIO.png"); // Asegúrate de que el archivo tenga la extensión correcta
-        JLabel imagencoheinicio = new JLabel();
-        imagencoheinicio.setBounds(100, 300, 516, 155); // Ajusta las coordenadas y el tamaño según sea necesario
-        imagencoheinicio.setIcon(new ImageIcon(imagencocheinicio.getImage().getScaledInstance(imagencoheinicio.getWidth(), imagencoheinicio.getHeight(), Image.SCALE_SMOOTH)));
-        panelPrincipal.add(imagencoheinicio);
-
         ventanaPrincipal.setVisible(true);
 
-
     }
+
 }

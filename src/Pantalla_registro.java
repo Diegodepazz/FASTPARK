@@ -42,7 +42,7 @@ public class Pantalla_registro extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                PanelPrincipal vuelvo = new PanelPrincipal();
+                new Pantalla_iniciosesion();
             }
         });
 
