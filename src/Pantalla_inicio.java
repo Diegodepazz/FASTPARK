@@ -70,7 +70,7 @@ public class Pantalla_inicio extends General {
         });
 
         //AGREGAR IMAGEN LOGO
-        ImageIcon imagenlogo = new ImageIcon("res/Pantalla1/LOGO.png");
+        ImageIcon imagenlogo = new ImageIcon("Imagenes/LOGO.png");
         JLabel logo = new JLabel();
         logo.setBounds(100,100,520,155);
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));

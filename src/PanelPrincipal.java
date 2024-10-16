@@ -20,17 +20,22 @@ public class PanelPrincipal extends General {
         //TEXTO BIENVENIDA
         JLabel bienvenida = new JLabel();
         bienvenida.setText("¡BIENVENIDO!");
-        bienvenida.setBounds(270, 330, 300, 100);
+        bienvenida.setBounds(290, 340, 300, 100);
         bienvenida.setForeground(Color.RED);
-        bienvenida.setFont(new Font("Arial", Font.BOLD, 32));
+        bienvenida.setFont(new Font("Arial", Font.BOLD, 24));
         panelPrincipal.add(bienvenida);
 
         //AGREGAR BOTON
-        ImageIcon imagenboton = new ImageIcon("res/FLECHA2.png");
-        JButton botonprincipal = new JButton();
-        botonprincipal.setBounds(330, 520, 110, 110);
-        botonprincipal.setBackground(Color.white);
-        botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        ImageIcon imagenboton = new ImageIcon("");
+        JButton botonprincipal = new JButton("INICIAR");
+        botonprincipal.setFocusable(false);
+        botonprincipal.setBounds(260, 550, 220, 40);
+        botonprincipal.setForeground(Color.white);
+        botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
+        botonprincipal.setBackground(Color.RED);
+        //Nuevo
+        botonprincipal.setOpaque(true);
+        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
@@ -44,7 +49,7 @@ public class PanelPrincipal extends General {
         });
 
         //AGREGAR IMAGEN LOGO
-        ImageIcon imagenlogo = new ImageIcon("res/Pantalla1/LOGO.png");
+        ImageIcon imagenlogo = new ImageIcon("Imagenes/LOGO.png");
         JLabel logo = new JLabel();
         logo.setBounds(100,100,516,155);
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
@@ -52,6 +57,6 @@ public class PanelPrincipal extends General {
 
         ventanaPrincipal.setVisible(true);
 
-    }
 
+    }
 }
