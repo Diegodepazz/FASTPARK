@@ -16,7 +16,7 @@ public class Pantalla_opciones extends General {
 
         //TEXTO REGISTRO
         JLabel eligeuncampo = new JLabel();
-        eligeuncampo.setText("ELIGE UN CAMPO");
+        eligeuncampo.setText("ELIJA UNA OPCIÓN");
         eligeuncampo.setBounds(280, 300, 500, 100);
         eligeuncampo.setForeground(Color.red);
         eligeuncampo.setFont(new Font("Arial", Font.BOLD, 20));
@@ -36,9 +36,9 @@ public class Pantalla_opciones extends General {
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("RESERVAR PLAZA");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(260, 600, 180, 20);
+        botonprincipal.setBounds(110, 530, 220, 40);
         botonprincipal.setForeground(Color.white);
-        botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
+        botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal.setBackground(Color.RED);
         //Nuevo
         botonprincipal.setOpaque(true);
@@ -59,9 +59,9 @@ public class Pantalla_opciones extends General {
         ImageIcon imagenboton1 = new ImageIcon("");
         JButton botonprincipal1 = new JButton("VER PLAZA");
         botonprincipal1.setFocusable(false);
-        botonprincipal1.setBounds(260, 550, 180, 20);
+        botonprincipal1.setBounds(410, 530, 220, 40);
         botonprincipal1.setForeground(Color.white);
-        botonprincipal1.setFont(new Font("Arial", Font.BOLD, 14));
+        botonprincipal1.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal1.setBackground(Color.RED);
         //Nuevo
         botonprincipal1.setOpaque(true);
@@ -82,9 +82,9 @@ public class Pantalla_opciones extends General {
         ImageIcon imagenboton2 = new ImageIcon("");
         JButton botonprincipal2 = new JButton("VOLVER");
         botonprincipal2.setFocusable(false);
-        botonprincipal2.setBounds(260, 650, 180, 20);
+        botonprincipal2.setBounds(260, 600, 220, 40);
         botonprincipal2.setForeground(Color.white);
-        botonprincipal2.setFont(new Font("Arial", Font.BOLD, 14));
+        botonprincipal2.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal2.setBackground(Color.RED);
         //Nuevo
         botonprincipal2.setOpaque(true);
