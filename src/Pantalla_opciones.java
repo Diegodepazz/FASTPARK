@@ -15,19 +15,28 @@ public class Pantalla_opciones extends General {
         ventanaPrincipal.add(panelPrincipal);
 
         //TEXTO REGISTRO
+        JLabel eligeuncampo = new JLabel();
+        eligeuncampo.setText("ELIGE UN CAMPO");
+        eligeuncampo.setBounds(280, 300, 500, 100);
+        eligeuncampo.setForeground(Color.red);
+        eligeuncampo.setFont(new Font("Arial", Font.BOLD, 20));
+        panelPrincipal.add(eligeuncampo);
+
+        //TEXTO REGISTRO
         JLabel bienvenida = new JLabel();
-        bienvenida.setText("INGRESE SUS DATOS PARA ACCEDER");
-        bienvenida.setBounds(172, 260, 500, 100);
+        bienvenida.setText("¡BIENVENIDO!");
+        bienvenida.setBounds(280, 260, 500, 100);
         bienvenida.setForeground(Color.red);
         bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(bienvenida);
 
 
+
         //AGREGAR BOTON INICIAR SESIÓN
         ImageIcon imagenboton = new ImageIcon("");
-        JButton botonprincipal = new JButton("INICIAR SESIÓN");
+        JButton botonprincipal = new JButton("RESERVAR PLAZA");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(260, 600, 220, 40);
+        botonprincipal.setBounds(260, 600, 180, 20);
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
         botonprincipal.setBackground(Color.RED);
@@ -45,6 +54,53 @@ public class Pantalla_opciones extends General {
                 PanelPrincipal vuelvo = new PanelPrincipal();
             }
         });
+
+        //AGREGAR BOTON INICIAR SESIÓN
+        ImageIcon imagenboton1 = new ImageIcon("");
+        JButton botonprincipal1 = new JButton("VER PLAZA");
+        botonprincipal1.setFocusable(false);
+        botonprincipal1.setBounds(260, 550, 180, 20);
+        botonprincipal1.setForeground(Color.white);
+        botonprincipal1.setFont(new Font("Arial", Font.BOLD, 14));
+        botonprincipal1.setBackground(Color.RED);
+        //Nuevo
+        botonprincipal1.setOpaque(true);
+        //botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal1.getWidth(), botonprincipal1.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal1.setBorderPainted(false);
+        panelPrincipal.add(botonprincipal1);
+
+        botonprincipal1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ventanaPrincipal.dispose();
+
+                PanelPrincipal vuelvo = new PanelPrincipal();
+            }
+        });
+
+        //AGREGAR BOTON INICIAR SESIÓN
+        ImageIcon imagenboton2 = new ImageIcon("");
+        JButton botonprincipal2 = new JButton("VOLVER");
+        botonprincipal2.setFocusable(false);
+        botonprincipal2.setBounds(260, 650, 180, 20);
+        botonprincipal2.setForeground(Color.white);
+        botonprincipal2.setFont(new Font("Arial", Font.BOLD, 14));
+        botonprincipal2.setBackground(Color.RED);
+        //Nuevo
+        botonprincipal2.setOpaque(true);
+        //botonprincipal2.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal2.getWidth(), botonprincipal2.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal2.setBorderPainted(false);
+        panelPrincipal.add(botonprincipal2);
+
+        botonprincipal2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ventanaPrincipal.dispose();
+
+                PanelPrincipal vuelvo = new PanelPrincipal();
+            }
+        });
+
 
         //AGREGAR IMAGEN LOGO
         ImageIcon imagenlogo = new ImageIcon("Imagenes/LOGO.png");

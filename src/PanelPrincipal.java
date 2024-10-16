@@ -50,7 +50,7 @@ public class PanelPrincipal extends General {
         // AGREGAR SEGUNDO LOGO (COCHE INICIO)
         ImageIcon imagencocheinicio = new ImageIcon("Imagenes/LOGO_INICIO.png"); // Asegúrate de que el archivo tenga la extensión correcta
         JLabel imagencoheinicio = new JLabel();
-        imagencoheinicio.setBounds(100, 300, 516, 155); // Ajusta las coordenadas y el tamaño según sea necesario
+        imagencoheinicio.setBounds(110, 300, 516, 155); // Ajusta las coordenadas y el tamaño según sea necesario
         imagencoheinicio.setIcon(new ImageIcon(imagencocheinicio.getImage().getScaledInstance(imagencoheinicio.getWidth(), imagencoheinicio.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(imagencoheinicio);
 

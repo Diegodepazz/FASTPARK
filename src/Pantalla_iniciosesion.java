@@ -2,8 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 public class Pantalla_iniciosesion extends General {
+
     public Pantalla_iniciosesion(){
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
@@ -66,7 +68,6 @@ public class Pantalla_iniciosesion extends General {
         JPasswordField campoContrasena = new JPasswordField();
         campoContrasena.setBounds(265, 450, 300, 30);
         panelPrincipal.add(campoContrasena);
-
 
         //AGREGAR IMAGEN LOGO
         ImageIcon imagenlogo = new ImageIcon("Imagenes/LOGO.png");
