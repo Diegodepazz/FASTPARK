@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Panel2 extends General {
-    public Panel2(){
+public class Pantalla_inicio extends General {
+    public Pantalla_inicio(){
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -29,7 +29,7 @@ public class Panel2 extends General {
         botonprincipal.setFocusable(false);
         botonprincipal.setBounds(260, 430, 220, 40);
         botonprincipal.setForeground(Color.white);
-        botonprincipal.setFont(new Font("Arial", Font.BOLD, 15));
+        botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal.setBackground(Color.RED);
         botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
@@ -40,7 +40,7 @@ public class Panel2 extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                PanelPrincipal vuelvo = new PanelPrincipal();
+                new Panel3();
             }
         });
 
@@ -50,7 +50,7 @@ public class Panel2 extends General {
         botonprincipal1.setFocusable(false);
         botonprincipal1.setBounds(260, 520, 220, 40);
         botonprincipal1.setForeground(Color.white);
-        botonprincipal1.setFont(new Font("Arial", Font.BOLD, 15));
+        botonprincipal1.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal1.setBackground(Color.red);
         botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal1.setBorderPainted(false);
@@ -61,7 +61,7 @@ public class Panel2 extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                PanelPrincipal vuelvo = new PanelPrincipal();
+                new Panel4();
             }
         });
 
@@ -76,7 +76,5 @@ public class Panel2 extends General {
         ventanaPrincipal.setVisible(true);
 
     }
-
-
 
 }

@@ -3,12 +3,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.awt.Font.*;
-
-public class PanelPrincipal extends General {
-    public PanelPrincipal(){
+public class Panel4 extends General {
+    public Panel4(){
         //VENTANA
-        JFrame ventanaPrincipal =  crearventana();
+        JFrame ventanaPrincipal = crearventana();
 
         //PANEL
         JPanel panelPrincipal = new JPanel();
@@ -16,19 +14,23 @@ public class PanelPrincipal extends General {
         panelPrincipal.setBackground(Color.white);
         ventanaPrincipal.add(panelPrincipal);
 
-        //TEXTO BIENVENIDA
+        //TEXTO REGISTRO
         JLabel bienvenida = new JLabel();
-        bienvenida.setText("¡BIENVENIDO!");
-        bienvenida.setBounds(270, 330, 300, 100);
-        bienvenida.setForeground(Color.RED);
-        bienvenida.setFont(new Font("Arial", Font.BOLD, 32));
+        bienvenida.setText("REGISTRAR");
+        bienvenida.setBounds(130, 280, 500, 100);
+        bienvenida.setForeground(Color.red);
+        bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(bienvenida);
 
-        //AGREGAR BOTON
-        ImageIcon imagenboton = new ImageIcon("res/FLECHA2.png");
-        JButton botonprincipal = new JButton();
-        botonprincipal.setBounds(330, 520, 110, 110);
-        botonprincipal.setBackground(Color.white);
+
+        //AGREGAR BOTON REGISTRAR CUENTA
+        ImageIcon imagenboton = new ImageIcon("");
+        JButton botonprincipal = new JButton("REGISTRAR CUENTA");
+        botonprincipal.setFocusable(false);
+        botonprincipal.setBounds(260, 520, 220, 40);
+        botonprincipal.setForeground(Color.white);
+        botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
+        botonprincipal.setBackground(Color.red);
         botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
@@ -38,19 +40,22 @@ public class PanelPrincipal extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_inicio();
+                PanelPrincipal vuelvo = new PanelPrincipal();
             }
         });
 
         //AGREGAR IMAGEN LOGO
         ImageIcon imagenlogo = new ImageIcon("res/Pantalla1/LOGO.png");
         JLabel logo = new JLabel();
-        logo.setBounds(100,100,516,155);
+        logo.setBounds(100,100,520,155);
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(logo);
+
 
         ventanaPrincipal.setVisible(true);
 
     }
+
+
 
 }
