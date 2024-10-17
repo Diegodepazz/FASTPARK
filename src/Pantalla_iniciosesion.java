@@ -19,9 +19,9 @@ public class Pantalla_iniciosesion extends General {
         //TEXTO REGISTRO
         JLabel bienvenida = new JLabel();
         bienvenida.setText("INGRESE SUS DATOS PARA ACCEDER");
-        bienvenida.setBounds(172, 260, 500, 100);
+        bienvenida.setBounds(175, 260, 500, 100);
         bienvenida.setForeground(Color.red);
-        bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
+        bienvenida.setFont(new Font("Arial", Font.BOLD, 18));
         panelPrincipal.add(bienvenida);
 
 
@@ -29,7 +29,7 @@ public class Pantalla_iniciosesion extends General {
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("INICIAR SESIÓN");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(260, 600, 220, 40);
+        botonprincipal.setBounds(260, 550, 220, 40);
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
         botonprincipal.setBackground(Color.RED);
@@ -45,6 +45,24 @@ public class Pantalla_iniciosesion extends General {
                 ventanaPrincipal.dispose();
 
                 new Pantalla_opciones();
+            }
+        });
+
+        //AGREGAR BOTON RETORNO
+        ImageIcon imagenboton1 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
+        JButton botonprincipal1 = new JButton("");
+        botonprincipal1.setFocusable(false);
+        botonprincipal1.setBounds(350, 620, 38, 40);
+        botonprincipal1.setIcon(new ImageIcon(imagenboton1.getImage().getScaledInstance(botonprincipal1.getWidth(), botonprincipal1.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal1.setBorderPainted(false);
+        panelPrincipal.add(botonprincipal1);
+
+        botonprincipal1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ventanaPrincipal.dispose();
+
+                new Pantalla_inicio();
             }
         });
 

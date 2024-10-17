@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Pantalla_opciones extends General {
-    public Pantalla_opciones(){
+public class Pantalla_reserva extends General {
+    public Pantalla_reserva(){
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -15,21 +15,12 @@ public class Pantalla_opciones extends General {
         ventanaPrincipal.add(panelPrincipal);
 
         //TEXTO REGISTRO
-        JLabel eligeuncampo = new JLabel();
-        eligeuncampo.setText("ELIJA UNA OPCIÓN");
-        eligeuncampo.setBounds(280, 300, 500, 100);
-        eligeuncampo.setForeground(Color.red);
-        eligeuncampo.setFont(new Font("Arial", Font.BOLD, 20));
-        panelPrincipal.add(eligeuncampo);
-
-        //TEXTO REGISTRO
         JLabel bienvenida = new JLabel();
-        bienvenida.setText("¡BIENVENIDO!");
+        bienvenida.setText("¡COMENCEMOS CON LA RESERVA DE PLAZA!");
         bienvenida.setBounds(280, 260, 500, 100);
         bienvenida.setForeground(Color.red);
         bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(bienvenida);
-
 
 
         //AGREGAR BOTON INICIAR SESIÓN
@@ -51,32 +42,10 @@ public class Pantalla_opciones extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_reserva();
+                new Pantalla_inicio();
             }
         });
 
-        //AGREGAR BOTON INICIAR SESIÓN
-        ImageIcon imagenboton1 = new ImageIcon("");
-        JButton botonprincipal1 = new JButton("VER TICKET");
-        botonprincipal1.setFocusable(false);
-        botonprincipal1.setBounds(410, 530, 220, 40);
-        botonprincipal1.setForeground(Color.white);
-        botonprincipal1.setFont(new Font("Arial", Font.BOLD, 16));
-        botonprincipal1.setBackground(Color.RED);
-        //Nuevo
-        botonprincipal1.setOpaque(true);
-        //botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal1.getWidth(), botonprincipal1.getHeight(), Image.SCALE_SMOOTH)));
-        botonprincipal1.setBorderPainted(false);
-        panelPrincipal.add(botonprincipal1);
-
-        botonprincipal1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
-                new Pantalla_verticket();
-            }
-        });
 
         //AGREGAR BOTON INICIAR SESIÓN
         ImageIcon imagenboton2 = new ImageIcon("");
@@ -97,7 +66,7 @@ public class Pantalla_opciones extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_inicio();
+                new Pantalla_opciones();
             }
         });
 

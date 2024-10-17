@@ -17,7 +17,7 @@ public class Pantalla_inicio extends General {
         //TEXTO REGISTRO
         JLabel bienvenida = new JLabel();
         bienvenida.setText("INICIE SESIÓN O REGÍSTRESE PARA CONTINUAR");
-        bienvenida.setBounds(130, 280, 500, 100);
+        bienvenida.setBounds(130, 295, 500, 100);
         bienvenida.setForeground(Color.red);
         bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(bienvenida);
@@ -27,7 +27,7 @@ public class Pantalla_inicio extends General {
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("INICIAR SESIÓN");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(260, 430, 220, 40);
+        botonprincipal.setBounds(260, 450, 220, 40);
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 15));
         botonprincipal.setBackground(Color.RED);

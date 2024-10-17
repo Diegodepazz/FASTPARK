@@ -3,10 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static java.awt.Font.*;
-
-public class PanelPrincipal extends General {
-    public PanelPrincipal(){
+public class Pantalla_principal extends General {
+    public Pantalla_principal(){
 
         //VENTANA
         JFrame ventanaPrincipal =  crearventana();
@@ -21,10 +19,10 @@ public class PanelPrincipal extends General {
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("INICIAR");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(260, 550, 220, 40);
+        botonprincipal.setBounds(260, 565, 220, 40);
         botonprincipal.setForeground(Color.white);
-        botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
-        botonprincipal.setBackground(Color.RED);
+        botonprincipal.setFont(new Font("Arial", Font.BOLD, 20));
+        botonprincipal.setBackground(new Color(64, 109, 180));
         //Nuevo
         botonprincipal.setOpaque(true);
         //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));

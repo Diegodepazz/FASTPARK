@@ -3,7 +3,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        PanelPrincipal otro = new PanelPrincipal();
+        Pantalla_principal otro = new Pantalla_principal();
         //Panel2 encender = new Panel2();
 
     }
