@@ -47,17 +47,12 @@ public class Pantalla_verticket extends General {
         });
 
 
-        //AGREGAR BOTON INICIAR SESIÓN
-        ImageIcon imagenboton2 = new ImageIcon("");
-        JButton botonprincipal2 = new JButton("VOLVER");
+        // AGREGAR BOTON INICIAR SESIÓN
+        ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
+        JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);
-        botonprincipal2.setBounds(260, 600, 220, 40);
-        botonprincipal2.setForeground(Color.white);
-        botonprincipal2.setFont(new Font("Arial", Font.BOLD, 16));
-        botonprincipal2.setBackground(Color.RED);
-        //Nuevo
-        botonprincipal2.setOpaque(true);
-        //botonprincipal2.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal2.getWidth(), botonprincipal2.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal2.setBounds(350, 620, 40, 40);
+        botonprincipal2.setIcon(new ImageIcon(imagenboton2.getImage().getScaledInstance(botonprincipal2.getWidth(), botonprincipal2.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal2.setBorderPainted(false);
         panelPrincipal.add(botonprincipal2);
 
@@ -65,11 +60,9 @@ public class Pantalla_verticket extends General {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
-
                 new Pantalla_opciones();
             }
         });
-
 
         //AGREGAR IMAGEN LOGO
         ImageIcon imagenlogo = new ImageIcon("Imagenes/LOGO.png");

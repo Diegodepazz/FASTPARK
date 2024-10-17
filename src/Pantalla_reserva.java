@@ -17,7 +17,7 @@ public class Pantalla_reserva extends General {
         //TEXTO REGISTRO
         JLabel bienvenida = new JLabel();
         bienvenida.setText("¡COMENCEMOS CON LA RESERVA DE PLAZA!");
-        bienvenida.setBounds(280, 260, 500, 100);
+        bienvenida.setBounds(136, 260, 500, 100);
         bienvenida.setForeground(Color.red);
         bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(bienvenida);
@@ -47,17 +47,12 @@ public class Pantalla_reserva extends General {
         });
 
 
-        //AGREGAR BOTON INICIAR SESIÓN
-        ImageIcon imagenboton2 = new ImageIcon("");
-        JButton botonprincipal2 = new JButton("VOLVER");
+        // AGREGAR BOTON INICIAR SESIÓN
+        ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
+        JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);
-        botonprincipal2.setBounds(260, 600, 220, 40);
-        botonprincipal2.setForeground(Color.white);
-        botonprincipal2.setFont(new Font("Arial", Font.BOLD, 16));
-        botonprincipal2.setBackground(Color.RED);
-        //Nuevo
-        botonprincipal2.setOpaque(true);
-        //botonprincipal2.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal2.getWidth(), botonprincipal2.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal2.setBounds(350, 620, 40, 40);
+        botonprincipal2.setIcon(new ImageIcon(imagenboton2.getImage().getScaledInstance(botonprincipal2.getWidth(), botonprincipal2.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal2.setBorderPainted(false);
         panelPrincipal.add(botonprincipal2);
 
@@ -65,7 +60,6 @@ public class Pantalla_reserva extends General {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
-
                 new Pantalla_opciones();
             }
         });
