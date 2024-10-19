@@ -16,10 +16,10 @@ public class Pantalla_verticket extends General {
 
         //TEXTO REGISTRO
         JLabel bienvenida = new JLabel();
-        bienvenida.setText("¡VISUALICE SU PLAZA!");
-        bienvenida.setBounds(280, 260, 500, 100);
-        bienvenida.setForeground(Color.red);
-        bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
+        bienvenida.setText("¡VISUALICE SU INFORMACIÓN DE PLAZA!");
+        bienvenida.setBounds(200, 210, 500, 100);
+        bienvenida.setForeground(new Color(63, 106, 184));
+        bienvenida.setFont(new Font("Arial", Font.BOLD, 17));
         panelPrincipal.add(bienvenida);
 
 

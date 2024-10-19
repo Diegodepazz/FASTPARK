@@ -7,6 +7,7 @@ import java.util.HashMap;
 public class Pantalla_iniciosesion extends General {
 
     public Pantalla_iniciosesion(){
+
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -20,7 +21,7 @@ public class Pantalla_iniciosesion extends General {
         JLabel bienvenida = new JLabel();
         bienvenida.setText("INGRESE SUS DATOS PARA ACCEDER");
         bienvenida.setBounds(175, 260, 500, 100);
-        bienvenida.setForeground(Color.red);
+        bienvenida.setForeground(new Color(63, 106, 184));
         bienvenida.setFont(new Font("Arial", Font.BOLD, 18));
         panelPrincipal.add(bienvenida);
 
@@ -33,9 +34,7 @@ public class Pantalla_iniciosesion extends General {
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
         botonprincipal.setBackground(Color.RED);
-        //Nuevo
-        botonprincipal.setOpaque(true);
-        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 

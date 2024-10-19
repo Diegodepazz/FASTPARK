@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 public class Pantalla_opciones extends General {
     public Pantalla_opciones(){
+
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -30,8 +31,6 @@ public class Pantalla_opciones extends General {
         bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(bienvenida);
 
-
-
         //AGREGAR BOTON INICIAR SESIÓN
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("RESERVAR PLAZA");
@@ -40,9 +39,7 @@ public class Pantalla_opciones extends General {
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal.setBackground(Color.RED);
-        //Nuevo
-        botonprincipal.setOpaque(true);
-        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
@@ -51,7 +48,7 @@ public class Pantalla_opciones extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_reserva();
+                new Pantalla_reserva1();
             }
         });
 
@@ -63,9 +60,7 @@ public class Pantalla_opciones extends General {
         botonprincipal1.setForeground(Color.white);
         botonprincipal1.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal1.setBackground(Color.RED);
-        //Nuevo
-        botonprincipal1.setOpaque(true);
-        //botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal1.getWidth(), botonprincipal1.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal1.getWidth(), botonprincipal1.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal1.setBorderPainted(false);
         panelPrincipal.add(botonprincipal1);
 
@@ -102,7 +97,6 @@ public class Pantalla_opciones extends General {
         logo.setBounds(100,100,520,155);
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(logo);
-
         ventanaPrincipal.setVisible(true);
 
     }

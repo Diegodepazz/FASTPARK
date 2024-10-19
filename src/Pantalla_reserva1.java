@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Pantalla_reserva extends General {
-    public Pantalla_reserva(){
+public class Pantalla_reserva1 extends General {
+    public Pantalla_reserva1(){
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -14,40 +14,50 @@ public class Pantalla_reserva extends General {
         panelPrincipal.setBackground(Color.white);
         ventanaPrincipal.add(panelPrincipal);
 
-        //TEXTO REGISTRO
+        //TEXTO COMENZAR CON LA RESERVA
         JLabel bienvenida = new JLabel();
-        bienvenida.setText("¡COMENCEMOS CON LA RESERVA DE PLAZA!");
-        bienvenida.setBounds(136, 260, 500, 100);
-        bienvenida.setForeground(Color.red);
-        bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
+        bienvenida.setText("COMENCEMOS CON LA RESERVA DE PLAZA");
+        bienvenida.setBounds(175, 230, 500, 100);
+        bienvenida.setForeground(new Color(63, 106, 184));
+        bienvenida.setFont(new Font("Arial", Font.BOLD, 17));
         panelPrincipal.add(bienvenida);
 
+        //TEXTO ELEGIR TIPO DE VEHÍCULO
+        JLabel bienvenida1 = new JLabel();
+        bienvenida1.setText("ELIJA EL TIPO DE VEHÍCULO QUE DESEE");
+        bienvenida1.setBounds(200, 258, 500, 100);
+        bienvenida1.setForeground(new Color(63, 106, 184));
+        bienvenida1.setFont(new Font("Arial", Font.BOLD, 16));
+        panelPrincipal.add(bienvenida1);
 
-        //AGREGAR BOTON INICIAR SESIÓN
-        ImageIcon imagenboton = new ImageIcon("");
-        JButton botonprincipal = new JButton("RESERVAR PLAZA");
+        // COMBO BOX PARA SELECCIÓN DE VEHÍCULO
+        String[] opcionesVehiculo = {"Coche", "Moto", "Coche Eléctrico", "Minusválido"};
+        JComboBox<String> comboVehiculo = new JComboBox<>(opcionesVehiculo);
+        comboVehiculo.setBounds(260, 433, 220, 30);
+        panelPrincipal.add(comboVehiculo);
+
+        //AGREGAR BOTON RESERVAR PLAZA
+        JButton botonprincipal = new JButton("CONTINUAR CON LA RESERVA");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(110, 530, 220, 40);
+        botonprincipal.setBounds(220, 555, 300, 32);
         botonprincipal.setForeground(Color.white);
-        botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
+        botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
         botonprincipal.setBackground(Color.RED);
-        //Nuevo
         botonprincipal.setOpaque(true);
-        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
         botonprincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String vehiculoSeleccionado = (String) comboVehiculo.getSelectedItem();
+                JOptionPane.showMessageDialog(ventanaPrincipal, "Vehículo seleccionado: " + vehiculoSeleccionado);
                 ventanaPrincipal.dispose();
-
-                new Pantalla_inicio();
+                new Pantalla_reserva1();
             }
         });
 
-
-        // AGREGAR BOTON INICIAR SESIÓN
+        // AGREGAR BOTON RETORNO
         ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);
@@ -64,16 +74,13 @@ public class Pantalla_reserva extends General {
             }
         });
 
-
         //AGREGAR IMAGEN LOGO
         ImageIcon imagenlogo = new ImageIcon("Imagenes/LOGO.png");
         JLabel logo = new JLabel();
-        logo.setBounds(100,100,520,155);
+        logo.setBounds(100, 100, 520, 155);
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(logo);
 
         ventanaPrincipal.setVisible(true);
-
     }
-
 }
