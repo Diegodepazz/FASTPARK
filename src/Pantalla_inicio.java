@@ -15,7 +15,7 @@ public class Pantalla_inicio extends General {
         panelPrincipal.setBackground(Color.white);
         ventanaPrincipal.add(panelPrincipal);
 
-        //TEXTO REGISTRO
+        //TEXTO: INICIE SESIÓN O REGÍSTRESE PARA CONTINUAR
         JLabel bienvenida = new JLabel();
         bienvenida.setText("INICIE SESIÓN O REGÍSTRESE PARA CONTINUAR");
         bienvenida.setBounds(130, 295, 500, 100);
@@ -24,7 +24,7 @@ public class Pantalla_inicio extends General {
         panelPrincipal.add(bienvenida);
 
 
-        //AGREGAR BOTON INICIO DE SESIÓN
+        //AGREGAR BOTON: INICIO DE SESIÓN
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("INICIAR SESIÓN");
         botonprincipal.setFocusable(false);
@@ -32,7 +32,8 @@ public class Pantalla_inicio extends General {
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 15));
         botonprincipal.setBackground(Color.RED);
-        botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal.setOpaque(true);
+        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
@@ -45,7 +46,7 @@ public class Pantalla_inicio extends General {
             }
         });
 
-        //AGREGAR BOTON1 REGISTRAR CUENTA
+        //AGREGAR BOTON1: REGISTRAR CUENTA
         ImageIcon imagenboton1 = new ImageIcon("");
         JButton botonprincipal1 = new JButton("REGISTRAR CUENTA");
         botonprincipal1.setFocusable(false);
@@ -53,7 +54,8 @@ public class Pantalla_inicio extends General {
         botonprincipal1.setForeground(Color.white);
         botonprincipal1.setFont(new Font("Arial", Font.BOLD, 15));
         botonprincipal1.setBackground(Color.red);
-        botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal1.setOpaque(true);
+        //botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal1.setBorderPainted(false);
         panelPrincipal.add(botonprincipal1);
 

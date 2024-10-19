@@ -14,7 +14,7 @@ public class Pantalla_reserva1 extends General {
         panelPrincipal.setBackground(Color.white);
         ventanaPrincipal.add(panelPrincipal);
 
-        //TEXTO COMENZAR CON LA RESERVA
+        //TEXTO: COMENCEMOS CON LA RESERVA DE PLAZA
         JLabel bienvenida = new JLabel();
         bienvenida.setText("COMENCEMOS CON LA RESERVA DE PLAZA");
         bienvenida.setBounds(175, 230, 500, 100);
@@ -22,7 +22,7 @@ public class Pantalla_reserva1 extends General {
         bienvenida.setFont(new Font("Arial", Font.BOLD, 17));
         panelPrincipal.add(bienvenida);
 
-        //TEXTO ELEGIR TIPO DE VEHÍCULO
+        //TEXTO: ELIJA EL TIPO DE VEHÍCULO QUE DESEE
         JLabel bienvenida1 = new JLabel();
         bienvenida1.setText("ELIJA EL TIPO DE VEHÍCULO QUE DESEE");
         bienvenida1.setBounds(200, 258, 500, 100);
@@ -36,7 +36,7 @@ public class Pantalla_reserva1 extends General {
         comboVehiculo.setBounds(260, 433, 220, 30);
         panelPrincipal.add(comboVehiculo);
 
-        //AGREGAR BOTON RESERVAR PLAZA
+        //BOTON: CONTINUAR CON LA RESERVA
         JButton botonprincipal = new JButton("CONTINUAR CON LA RESERVA");
         botonprincipal.setFocusable(false);
         botonprincipal.setBounds(220, 555, 300, 32);
@@ -57,7 +57,7 @@ public class Pantalla_reserva1 extends General {
             }
         });
 
-        // AGREGAR BOTON RETORNO
+        // BOTON: RETORNO
         ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);

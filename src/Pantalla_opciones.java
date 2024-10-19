@@ -15,7 +15,7 @@ public class Pantalla_opciones extends General {
         panelPrincipal.setBackground(Color.white);
         ventanaPrincipal.add(panelPrincipal);
 
-        //TEXTO REGISTRO
+        //TEXTO: ELIJA UNA OPCIÓN
         JLabel eligeuncampo = new JLabel();
         eligeuncampo.setText("ELIJA UNA OPCIÓN");
         eligeuncampo.setBounds(280, 300, 500, 100);
@@ -31,7 +31,7 @@ public class Pantalla_opciones extends General {
         bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(bienvenida);
 
-        //AGREGAR BOTON INICIAR SESIÓN
+        //BOTÓN: RESERVAR PLAZA
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("RESERVAR PLAZA");
         botonprincipal.setFocusable(false);
@@ -39,7 +39,8 @@ public class Pantalla_opciones extends General {
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal.setBackground(Color.RED);
-        botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal.setOpaque(true);
+        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
@@ -52,15 +53,15 @@ public class Pantalla_opciones extends General {
             }
         });
 
-        //AGREGAR BOTON INICIAR SESIÓN
-        ImageIcon imagenboton1 = new ImageIcon("");
+        //BOTON: VER TICKET
         JButton botonprincipal1 = new JButton("VER TICKET");
         botonprincipal1.setFocusable(false);
         botonprincipal1.setBounds(410, 530, 220, 40);
         botonprincipal1.setForeground(Color.white);
         botonprincipal1.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal1.setBackground(Color.RED);
-        botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal1.getWidth(), botonprincipal1.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal1.setOpaque(true);
+        //botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal1.getWidth(), botonprincipal1.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal1.setBorderPainted(false);
         panelPrincipal.add(botonprincipal1);
 
@@ -73,7 +74,7 @@ public class Pantalla_opciones extends General {
             }
         });
 
-        // AGREGAR BOTON INICIAR SESIÓN
+        // BOTÓN: RETORNO
         ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);

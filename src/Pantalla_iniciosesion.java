@@ -17,7 +17,7 @@ public class Pantalla_iniciosesion extends General {
         panelPrincipal.setBackground(Color.white);
         ventanaPrincipal.add(panelPrincipal);
 
-        //TEXTO REGISTRO
+        //TEXTO: INGRESE SUS DATOS PARA ACCEDER
         JLabel bienvenida = new JLabel();
         bienvenida.setText("INGRESE SUS DATOS PARA ACCEDER");
         bienvenida.setBounds(175, 260, 500, 100);
@@ -26,7 +26,7 @@ public class Pantalla_iniciosesion extends General {
         panelPrincipal.add(bienvenida);
 
 
-        //AGREGAR BOTON INICIAR SESIÓN
+        //AGREGAR BOTON: INICIAR SESIÓN
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("INICIAR SESIÓN");
         botonprincipal.setFocusable(false);
@@ -34,7 +34,8 @@ public class Pantalla_iniciosesion extends General {
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
         botonprincipal.setBackground(Color.RED);
-        botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal.setOpaque(true);
+        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
@@ -47,7 +48,7 @@ public class Pantalla_iniciosesion extends General {
             }
         });
 
-        //AGREGAR BOTON RETORNO
+        //AGREGAR BOTON: RETORNO
         ImageIcon imagenboton1 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal1 = new JButton("");
         botonprincipal1.setFocusable(false);
@@ -70,7 +71,7 @@ public class Pantalla_iniciosesion extends General {
         etiquetaCorreo.setBounds(130, 400, 100, 30);
         panelPrincipal.add(etiquetaCorreo);
 
-        // CAMPO CORREO
+        // RECTÁNGULO: ESCRIBIR CORREO
         JTextField campoCorreo = new JTextField();
         campoCorreo.setBounds(265, 400, 300, 30);
         panelPrincipal.add(campoCorreo);
@@ -81,7 +82,7 @@ public class Pantalla_iniciosesion extends General {
         etiquetaContrasena.setBounds(130, 450, 100, 30);
         panelPrincipal.add(etiquetaContrasena);
 
-        // CAMPO CONTRASEÑA
+        // RECTÁNGULO: ESCRIBIR CONTRASEÑA
         JPasswordField campoContrasena = new JPasswordField();
         campoContrasena.setBounds(265, 450, 300, 30);
         panelPrincipal.add(campoContrasena);

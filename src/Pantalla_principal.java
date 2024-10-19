@@ -15,7 +15,7 @@ public class Pantalla_principal extends General {
         panelPrincipal.setBackground(Color.white);
         ventanaPrincipal.add(panelPrincipal);
 
-        //AGREGAR BOTON
+        //BOTÓN: INICIAR
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("INICIAR");
         botonprincipal.setFocusable(false);
@@ -23,7 +23,8 @@ public class Pantalla_principal extends General {
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 20));
         botonprincipal.setBackground(new Color(64, 109, 180));
-        botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal.setOpaque(true);
+        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
@@ -36,7 +37,7 @@ public class Pantalla_principal extends General {
             }
         });
 
-        //AGREGAR IMAGEN LOGO
+        // IMAGEN LOGO
         ImageIcon imagenlogo = new ImageIcon("Imagenes/LOGO.png");
         JLabel logo = new JLabel();
         logo.setBounds(100,100,516,155);

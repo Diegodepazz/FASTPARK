@@ -14,7 +14,7 @@ public class Pantalla_verticket extends General {
         panelPrincipal.setBackground(Color.white);
         ventanaPrincipal.add(panelPrincipal);
 
-        //TEXTO REGISTRO
+        //TEXTO: VISUALICE SU INFORMACIÓN DE PLAZA
         JLabel bienvenida = new JLabel();
         bienvenida.setText("¡VISUALICE SU INFORMACIÓN DE PLAZA!");
         bienvenida.setBounds(200, 210, 500, 100);
@@ -23,15 +23,16 @@ public class Pantalla_verticket extends General {
         panelPrincipal.add(bienvenida);
 
 
-        //AGREGAR BOTON INICIAR SESIÓN
+        //BOTON:
         ImageIcon imagenboton = new ImageIcon("");
-        JButton botonprincipal = new JButton("");
+        JButton botonprincipal = new JButton("HOLA");
         botonprincipal.setFocusable(false);
         botonprincipal.setBounds(110, 530, 220, 40);
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal.setBackground(Color.RED);
-        botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal.setOpaque(true);
+        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
@@ -44,8 +45,7 @@ public class Pantalla_verticket extends General {
             }
         });
 
-
-        // AGREGAR BOTON INICIAR SESIÓN
+        // BOTON: RETORNO
         ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);

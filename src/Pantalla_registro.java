@@ -14,7 +14,7 @@ public class Pantalla_registro extends General {
         panelPrincipal.setBackground(Color.white);
         ventanaPrincipal.add(panelPrincipal);
 
-        //TEXTO REGISTRO
+        //TEXTO: INGRESE SUS DATOS PARA REGISTRARSE
         JLabel bienvenida = new JLabel();
         bienvenida.setText("INGRESE SUS DATOS PARA REGISTRARSE");
         bienvenida.setBounds(155, 250, 500, 100);
@@ -22,7 +22,7 @@ public class Pantalla_registro extends General {
         bienvenida.setFont(new Font("Arial", Font.BOLD, 18));
         panelPrincipal.add(bienvenida);
 
-        //AGREGAR BOTON REGISTRAR CUENTA
+        //BOTON: REGISTRAR CUENTA
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("REGISTRAR CUENTA");
         botonprincipal.setFocusable(false);
@@ -30,7 +30,8 @@ public class Pantalla_registro extends General {
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
         botonprincipal.setBackground(Color.red);
-        botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal.setOpaque(true);
+        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
@@ -43,7 +44,7 @@ public class Pantalla_registro extends General {
             }
         });
 
-        //AGREGAR BOTON RETORNO
+        //BOTON: RETORNO
         ImageIcon imagenboton1 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal1 = new JButton("");
         botonprincipal1.setFocusable(false);
@@ -66,7 +67,7 @@ public class Pantalla_registro extends General {
         camponombre.setBounds(100, 375, 150, 30);
         panelPrincipal.add(camponombre);
 
-        // CAMPO NOMBRE
+        // RECTÁNGULO: ESCRIBIR NOMBRE
         JTextField campoNombre = new JTextField();
         campoNombre.setBounds(265, 375, 300, 30);
         panelPrincipal.add(campoNombre);
@@ -77,7 +78,7 @@ public class Pantalla_registro extends General {
         campocorreo.setBounds(100, 425, 100, 30);
         panelPrincipal.add(campocorreo);
 
-        // CAMPO CORREO
+        // RECTÁNGULO: ESCRIBIR CORREO
         JTextField campoCorreo = new JTextField();
         campoCorreo.setBounds(265, 425, 300, 30);
         panelPrincipal.add(campoCorreo);
@@ -88,7 +89,7 @@ public class Pantalla_registro extends General {
         campocontrasena.setBounds(100, 475, 100, 30);
         panelPrincipal.add(campocontrasena);
 
-        // CAMPO CONTRASEÑA
+        // RECTÁNGULO: ESCRIBIR CONTRASEÑA
         JPasswordField campoContrasena = new JPasswordField();
         campoContrasena.setBounds(265, 475, 300, 30);
         panelPrincipal.add(campoContrasena);
