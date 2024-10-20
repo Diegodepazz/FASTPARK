@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Pantalla_reserva1 extends General {
-    public Pantalla_reserva1(){
+public class Pantalla_calle_fernandez extends General {
+    public Pantalla_calle_fernandez(){
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -16,25 +16,12 @@ public class Pantalla_reserva1 extends General {
 
         //TEXTO: COMENCEMOS CON LA RESERVA DE PLAZA
         JLabel bienvenida = new JLabel();
-        bienvenida.setText("COMENCEMOS CON LA RESERVA DE PLAZA");
+        bienvenida.setText("CALLE FERNANDEZ DE LOS RIOS");
         bienvenida.setBounds(175, 230, 500, 100);
         bienvenida.setForeground(new Color(63, 106, 184));
         bienvenida.setFont(new Font("Arial", Font.BOLD, 17));
         panelPrincipal.add(bienvenida);
 
-        //TEXTO: ELIJA EL TIPO DE VEHÍCULO QUE DESEE
-        JLabel bienvenida1 = new JLabel();
-        bienvenida1.setText("ELIJA EL TIPO DE VEHÍCULO QUE DESEE");
-        bienvenida1.setBounds(200, 258, 500, 100);
-        bienvenida1.setForeground(new Color(63, 106, 184));
-        bienvenida1.setFont(new Font("Arial", Font.BOLD, 16));
-        panelPrincipal.add(bienvenida1);
-
-        // COMBO BOX PARA SELECCIÓN DE VEHÍCULO
-        String[] opcionesVehiculo = {"Coche", "Moto", "Coche Eléctrico", "Minusválido"};
-        JComboBox<String> comboVehiculo = new JComboBox<>(opcionesVehiculo);
-        comboVehiculo.setBounds(260, 433, 220, 30);
-        panelPrincipal.add(comboVehiculo);
 
         //BOTON: CONTINUAR CON LA RESERVA
         JButton botonprincipal = new JButton("CONTINUAR CON LA RESERVA");
@@ -50,10 +37,8 @@ public class Pantalla_reserva1 extends General {
         botonprincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String vehiculoSeleccionado = (String) comboVehiculo.getSelectedItem();
-                JOptionPane.showMessageDialog(ventanaPrincipal, "Vehículo seleccionado: " + vehiculoSeleccionado);
                 ventanaPrincipal.dispose();
-                new Pantalla_reserva1();
+                new Pantalla_calles();
             }
         });
 
@@ -70,16 +55,9 @@ public class Pantalla_reserva1 extends General {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
-                new Pantalla_opciones();
+                new Pantalla_calles();
             }
         });
-
-        //AGREGAR IMAGEN LOGO
-        ImageIcon imagenlogo = new ImageIcon("Imagenes/LOGO.png");
-        JLabel logo = new JLabel();
-        logo.setBounds(100, 100, 520, 155);
-        logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
-        panelPrincipal.add(logo);
 
         ventanaPrincipal.setVisible(true);
     }

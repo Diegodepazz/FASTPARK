@@ -17,17 +17,17 @@ public class Pantalla_opciones extends General {
 
         //TEXTO: ELIJA UNA OPCIÓN
         JLabel eligeuncampo = new JLabel();
-        eligeuncampo.setText("ELIJA UNA OPCIÓN");
-        eligeuncampo.setBounds(280, 300, 500, 100);
-        eligeuncampo.setForeground(Color.red);
+        eligeuncampo.setText("ELIJA UNA OPCIÓN PARA CONTINUAR");
+        eligeuncampo.setBounds(180, 300, 500, 100);
+        eligeuncampo.setForeground(new Color(63, 106, 184));
         eligeuncampo.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(eligeuncampo);
 
         //TEXTO REGISTRO
         JLabel bienvenida = new JLabel();
         bienvenida.setText("¡BIENVENIDO!");
-        bienvenida.setBounds(280, 260, 500, 100);
-        bienvenida.setForeground(Color.red);
+        bienvenida.setBounds(300, 260, 500, 100);
+        bienvenida.setForeground(new Color(63, 106, 184));
         bienvenida.setFont(new Font("Arial", Font.BOLD, 20));
         panelPrincipal.add(bienvenida);
 
@@ -49,7 +49,7 @@ public class Pantalla_opciones extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_reserva1();
+                new Pantalla_reserva_calendario();
             }
         });
 

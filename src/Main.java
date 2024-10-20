@@ -3,8 +3,8 @@
 public class Main {
     public static void main(String[] args) {
 
-        Pantalla_principal otro = new Pantalla_principal();
-        //Pantalla_reserva1 pantallaReserva = new Pantalla_reserva1();
-
+        //Pantalla_principal otro = new Pantalla_principal();
+        //Pantalla_reserva_calendario pantallaReserva = new Pantalla_reserva1();
+        Pantalla_calles pantallaCalles = new Pantalla_calles();
     }
 }
