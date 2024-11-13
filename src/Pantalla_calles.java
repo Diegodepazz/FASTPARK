@@ -17,23 +17,30 @@ public class Pantalla_calles extends General {
         //TEXTO: VISUALICE EN EL MAPA LAS CALLES DISPONIBLES
         JLabel bienvenida = new JLabel();
         bienvenida.setText("VISUALICE EN EL MAPA LAS CALLES DISPONIBLES");
-        bienvenida.setBounds(170, 50, 500, 100);
+        bienvenida.setBounds(170, 0, 500, 100);
         bienvenida.setForeground(new Color(63, 106, 184));
         bienvenida.setFont(new Font("Arial", Font.BOLD, 16));
         panelPrincipal.add(bienvenida);
 
+        //AGREGAR IMAGEN LOGO
+        ImageIcon imagenlogo = new ImageIcon("Imagenes/MAPA CALLES.png");
+        JLabel logo = new JLabel();
+        logo.setBounds(166,89,385,385);
+        logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
+        panelPrincipal.add(logo);
+
         //TEXTO: ESCOJA LA CALLE QUE DESEE PARA APARCAR
         JLabel bienvenida1 = new JLabel();
         bienvenida1.setText("ESCOJA LA CALLE QUE DESEE PARA APARCAR");
-        bienvenida1.setBounds(180, 330, 500, 100);
+        bienvenida1.setBounds(180, 480, 500, 100);
         bienvenida1.setForeground(new Color(63, 106, 184));
         bienvenida1.setFont(new Font("Arial", Font.BOLD, 16));
         panelPrincipal.add(bienvenida1);
 
         //BOTÓN: CALLE DE GUZMAN EL BUENO
-        JButton botonprincipal = new JButton("CALLE DE GUZMAN EL BUENO");
+        JButton botonprincipal = new JButton("1.  CALLE DE GUZMAN EL BUENO");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(220, 430, 300, 30);
+        botonprincipal.setBounds(70, 580, 265, 30);
         botonprincipal.setForeground(Color.white);
         botonprincipal.setBackground(new Color(63, 106, 184));
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 12));
@@ -52,9 +59,9 @@ public class Pantalla_calles extends General {
         });
 
         //BOTÓN: CALLE DE MELÉNDEZ VALDÉS
-        JButton botonprincipal1 = new JButton("CALLE DE MELÉNDEZ VALDÉS");
+        JButton botonprincipal1 = new JButton("2.  CALLE DE MELÉNDEZ VALDÉS");
         botonprincipal1.setFocusable(false);
-        botonprincipal1.setBounds(220, 470, 300, 30);
+        botonprincipal1.setBounds(70, 618, 265, 30);
         botonprincipal1.setForeground(Color.white);
         botonprincipal1.setBackground(new Color(63, 106, 184));
         botonprincipal1.setFont(new Font("Arial", Font.BOLD, 12));
@@ -74,9 +81,9 @@ public class Pantalla_calles extends General {
 
 
         //BOTÓN: CALLE DE GALILEO
-        JButton botonprincipal2 = new JButton("CALLE DE GALILEO");
+        JButton botonprincipal2 = new JButton("3.  CALLE DE GALILEO");
         botonprincipal2.setFocusable(false);
-        botonprincipal2.setBounds(220, 510, 300, 30);
+        botonprincipal2.setBounds(380, 580, 265, 30);
         botonprincipal2.setForeground(Color.white);
         botonprincipal2.setBackground(new Color(63, 106, 184));
         botonprincipal2.setFont(new Font("Arial", Font.BOLD, 12));
@@ -95,9 +102,9 @@ public class Pantalla_calles extends General {
         });
 
         //BOTÓN: CALLE DE FERNÁNDEZ DE LOS RÍOS
-        JButton botonprincipal3 = new JButton("CALLE DE FERNÁNDEZ DE LOS RÍOS");
+        JButton botonprincipal3 = new JButton("4.  CALLE DE FERNÁNDEZ DE LOS RÍOS");
         botonprincipal3.setFocusable(false);
-        botonprincipal3.setBounds(220, 550, 300, 30);
+        botonprincipal3.setBounds(380, 618, 265, 30);
         botonprincipal3.setForeground(Color.white);
         botonprincipal3.setBackground(new Color(63, 106, 184));
         botonprincipal3.setFont(new Font("Arial", Font.BOLD, 12));
@@ -120,7 +127,7 @@ public class Pantalla_calles extends General {
         ImageIcon imagenboton4 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal4 = new JButton("");
         botonprincipal4.setFocusable(false);
-        botonprincipal4.setBounds(350, 620, 40, 40);
+        botonprincipal4.setBounds(350, 676, 26, 26);
         botonprincipal4.setIcon(new ImageIcon(imagenboton4.getImage().getScaledInstance(botonprincipal4.getWidth(), botonprincipal4.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal4.setBorderPainted(false);
         panelPrincipal.add(botonprincipal4);

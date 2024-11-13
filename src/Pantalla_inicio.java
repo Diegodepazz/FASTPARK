@@ -75,7 +75,6 @@ public class Pantalla_inicio extends General {
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(logo);
 
-
         ventanaPrincipal.setVisible(true);
 
     }
