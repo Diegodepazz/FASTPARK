@@ -25,14 +25,14 @@ public class Pantalla_calles extends General {
         //AGREGAR IMAGEN LOGO
         ImageIcon imagenlogo = new ImageIcon("Imagenes/MAPA CALLES.png");
         JLabel logo = new JLabel();
-        logo.setBounds(166,89,385,385);
+        logo.setBounds(166,89,410,410);
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(logo);
 
         //TEXTO: ESCOJA LA CALLE QUE DESEE PARA APARCAR
         JLabel bienvenida1 = new JLabel();
-        bienvenida1.setText("ESCOJA LA CALLE QUE DESEE PARA APARCAR");
-        bienvenida1.setBounds(180, 480, 500, 100);
+        bienvenida1.setText("ESCOJA LA CALLE QUE DESEE PARA APARCAR:");
+        bienvenida1.setBounds(180, 495, 500, 100);
         bienvenida1.setForeground(new Color(63, 106, 184));
         bienvenida1.setFont(new Font("Arial", Font.BOLD, 16));
         panelPrincipal.add(bienvenida1);
@@ -40,7 +40,7 @@ public class Pantalla_calles extends General {
         //BOTÓN: CALLE DE GUZMAN EL BUENO
         JButton botonprincipal = new JButton("1.  CALLE DE GUZMAN EL BUENO");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(70, 580, 265, 30);
+        botonprincipal.setBounds(74, 580, 265, 30);
         botonprincipal.setForeground(Color.white);
         botonprincipal.setBackground(new Color(63, 106, 184));
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 12));
@@ -61,7 +61,7 @@ public class Pantalla_calles extends General {
         //BOTÓN: CALLE DE MELÉNDEZ VALDÉS
         JButton botonprincipal1 = new JButton("2.  CALLE DE MELÉNDEZ VALDÉS");
         botonprincipal1.setFocusable(false);
-        botonprincipal1.setBounds(70, 618, 265, 30);
+        botonprincipal1.setBounds(74, 618, 265, 30);
         botonprincipal1.setForeground(Color.white);
         botonprincipal1.setBackground(new Color(63, 106, 184));
         botonprincipal1.setFont(new Font("Arial", Font.BOLD, 12));
@@ -83,7 +83,7 @@ public class Pantalla_calles extends General {
         //BOTÓN: CALLE DE GALILEO
         JButton botonprincipal2 = new JButton("3.  CALLE DE GALILEO");
         botonprincipal2.setFocusable(false);
-        botonprincipal2.setBounds(380, 580, 265, 30);
+        botonprincipal2.setBounds(384, 580, 265, 30);
         botonprincipal2.setForeground(Color.white);
         botonprincipal2.setBackground(new Color(63, 106, 184));
         botonprincipal2.setFont(new Font("Arial", Font.BOLD, 12));
@@ -104,7 +104,7 @@ public class Pantalla_calles extends General {
         //BOTÓN: CALLE DE FERNÁNDEZ DE LOS RÍOS
         JButton botonprincipal3 = new JButton("4.  CALLE DE FERNÁNDEZ DE LOS RÍOS");
         botonprincipal3.setFocusable(false);
-        botonprincipal3.setBounds(380, 618, 265, 30);
+        botonprincipal3.setBounds(384, 618, 265, 30);
         botonprincipal3.setForeground(Color.white);
         botonprincipal3.setBackground(new Color(63, 106, 184));
         botonprincipal3.setFont(new Font("Arial", Font.BOLD, 12));
