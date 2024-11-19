@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -47,9 +48,30 @@ public class Pantalla_reserva_calendario extends General {
         DefaultTableModel modeloCalendario = new DefaultTableModel(columnas, 0);
         JTable tablaCalendario = new JTable(modeloCalendario);
         tablaCalendario.setRowHeight(30);
+        tablaCalendario.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // Solo una celda seleccionada
+        tablaCalendario.setCellSelectionEnabled(true); // Activar selección por celda
         JScrollPane scrollCalendario = new JScrollPane(tablaCalendario);
         scrollCalendario.setBounds(50, 150, 600, 200);
         panelPrincipal.add(scrollCalendario);
+
+        // Renderizador para resaltar solo la celda seleccionada
+        tablaCalendario.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value,
+                                                           boolean isSelected, boolean hasFocus,
+                                                           int row, int column) {
+                Component cell = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+                if (isSelected && value != null) { // Solo colorea la celda seleccionada si tiene valor
+                    cell.setBackground(new Color(63, 106, 184));
+                    cell.setForeground(Color.white);
+                } else {
+                    cell.setBackground(Color.white);
+                    cell.setForeground(Color.black);
+                }
+                return cell;
+            }
+        });
 
         // ACTUALIZAR CALENDARIO
         actualizarCalendario(comboAño, comboMes, modeloCalendario);
