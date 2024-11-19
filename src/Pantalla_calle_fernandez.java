@@ -65,7 +65,7 @@ public class Pantalla_calle_fernandez extends General {
                         JOptionPane.INFORMATION_MESSAGE);
 
                 ventanaPrincipal.dispose();
-                new Pantalla_calles();  // Aquí puedes pasar la información a la siguiente pantalla si lo necesitas
+                new Pantalla_calle_fernandez_matriz();  // Aquí puedes pasar la información a la siguiente pantalla si lo necesitas
             }
         });
 
