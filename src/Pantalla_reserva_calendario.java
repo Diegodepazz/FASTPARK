@@ -140,6 +140,23 @@ public class Pantalla_reserva_calendario extends General {
             }
         });
 
+        // BOTÓN: RETORNO
+        ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
+        JButton botonprincipal2 = new JButton("");
+        botonprincipal2.setFocusable(false);
+        botonprincipal2.setBounds(350, 620, 40, 40);
+        botonprincipal2.setIcon(new ImageIcon(imagenboton2.getImage().getScaledInstance(botonprincipal2.getWidth(), botonprincipal2.getHeight(), Image.SCALE_SMOOTH)));
+        botonprincipal2.setBorderPainted(false);
+        panelPrincipal.add(botonprincipal2);
+
+        botonprincipal2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ventanaPrincipal.dispose();
+                new Pantalla_opciones();
+            }
+        });
+
         ventanaPrincipal.setVisible(true);
     }
 
