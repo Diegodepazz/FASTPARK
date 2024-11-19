@@ -2,7 +2,8 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[]args) {
-        //new Pantalla_principal();
-        new Pantalla_calles();
+        new Pantalla_principal();
+        //new Pantalla_calles();
+
     }
 }

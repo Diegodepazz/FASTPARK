@@ -20,13 +20,6 @@ public class Pantalla_calle_guzman extends General {
         desplegableVehiculos.setBounds(270, 409, 200, 30);
         panelPrincipal.add(desplegableVehiculos);
 
-        //TEXTO: BIENVENIDO
-        JLabel bienvenida = new JLabel("¡¡BIENVENIDO!!");
-        bienvenida.setBounds(305, 35, 500, 100);
-        bienvenida.setForeground(new Color(63, 106, 184));
-        bienvenida.setFont(new Font("Arial", Font.BOLD, 19));
-        panelPrincipal.add(bienvenida);
-
         //TEXTO: SE ENCUENTRA EN LA CALLE GUZMÁN EL BUENO
         JLabel calle = new JLabel("USTED SE ENCUENTRA EN LA CALLE GUZMÁN EL BUENO");
         calle.setBounds(138, 65, 500, 100);
@@ -37,7 +30,7 @@ public class Pantalla_calle_guzman extends General {
         //AGREGAR IMAGEN LOGO
         ImageIcon imagenlogo = new ImageIcon("Imagenes/FOTO PARKING.png");
         JLabel logo = new JLabel();
-        logo.setBounds(100,180,500,140);
+        logo.setBounds(195,175,350,120);
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(logo);
 
