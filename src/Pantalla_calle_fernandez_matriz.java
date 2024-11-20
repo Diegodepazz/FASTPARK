@@ -1,78 +1,118 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.util.Random;
 
-public class Pantalla_calle_fernandez_matriz extends General {
-    public Pantalla_calle_fernandez_matriz() {
-        //VENTANA
-        JFrame ventanaPrincipal = crearventana();
+public class Pantalla_calle_fernandez_matriz {
 
-        //PANEL
+    public Pantalla_calle_fernandez_matriz(String tipoVehiculo) {
+        // VENTANA
+        JFrame ventanaPrincipal = new JFrame("Matriz Guzmán");
+        ventanaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventanaPrincipal.setSize(800, 700);
+        ventanaPrincipal.setLayout(new BorderLayout());
+        ventanaPrincipal.setLocationRelativeTo(null);
+
+        // PANEL PRINCIPAL
         JPanel panelPrincipal = new JPanel();
-        panelPrincipal.setLayout(null);
-        panelPrincipal.setBackground(Color.white);
-        ventanaPrincipal.add(panelPrincipal);
+        panelPrincipal.setLayout(new BorderLayout());
+        ventanaPrincipal.add(panelPrincipal, BorderLayout.CENTER);
 
-
-        //TEXTO: BIENVENIDO
-        JLabel bienvenida = new JLabel("¡¡MATRIZ FERNANDEZ!!");
-        bienvenida.setBounds(305, 35, 500, 100);
+        // TÍTULO
+        JLabel bienvenida = new JLabel("¡¡MATRIZ GUZMAN!!", SwingConstants.CENTER);
         bienvenida.setForeground(new Color(63, 106, 184));
         bienvenida.setFont(new Font("Arial", Font.BOLD, 19));
-        panelPrincipal.add(bienvenida);
+        panelPrincipal.add(bienvenida, BorderLayout.NORTH);
 
-        //TEXTO: SE ENCUENTRA EN LA CALLE GUZMÁN EL BUENO
-        JLabel calle = new JLabel("USTED SE ENCUENTRA EN LA CALLE FERNANDEZ DE LOS RÍOS");
-        calle.setBounds(138, 65, 500, 100);
-        calle.setForeground(new Color(63, 106, 184));
-        calle.setFont(new Font("Arial", Font.BOLD, 17));
-        panelPrincipal.add(calle);
+        // MATRIZ DE LA CALLE
+        String[][] calle = crearMatrizCalle(tipoVehiculo);
 
-        //BOTON: CONTINUAR CON LA RESERVA
-        JButton botonprincipal = new JButton("CONTINUAR CON LA RESERVA");
-        botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(220, 555, 300, 32);
-        botonprincipal.setForeground(Color.white);
-        botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
-        botonprincipal.setBackground(Color.RED);
-        botonprincipal.setOpaque(true);
-        botonprincipal.setBorderPainted(false);
-        panelPrincipal.add(botonprincipal);
+        // TABLA PARA MOSTRAR LA MATRIZ
+        JTable tablaCalle = new JTable(calle.length, calle[0].length);
+        for (int i = 0; i < calle.length; i++) {
+            for (int j = 0; j < calle[i].length; j++) {
+                tablaCalle.setValueAt(calle[i][j], i, j);
+            }
+        }
+        tablaCalle.setRowHeight(30);
+        JScrollPane scrollPane = new JScrollPane(tablaCalle);
+        panelPrincipal.add(scrollPane, BorderLayout.CENTER);
 
-        botonprincipal.addActionListener(new ActionListener() {
+        // Añadir un MouseListener para detectar clics en la tabla
+        tablaCalle.addMouseListener(new MouseAdapter() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void mouseClicked(MouseEvent e) {
+                // Obtener la fila y columna del clic
+                int fila = tablaCalle.rowAtPoint(e.getPoint());
+                int columna = tablaCalle.columnAtPoint(e.getPoint());
 
-                ventanaPrincipal.dispose();
-                new Pantalla_calles();  // Aquí puedes pasar la información a la siguiente pantalla si lo necesitas
+                String selectedPlaza = (String) tablaCalle.getValueAt(fila, columna);
+
+                // Si la plaza está ocupada (no disponible)
+                if (selectedPlaza.equals("No disponible")) {
+                    JOptionPane.showMessageDialog(ventanaPrincipal, "¡Error! Plaza no disponible.",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(ventanaPrincipal, "Has seleccionado: " + selectedPlaza,
+                            "Plaza seleccionada", JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         });
 
-        //AGREGAR IMAGEN CALLE
-        ImageIcon imagenlogo = new ImageIcon("");
-        JLabel logo = new JLabel();
-        logo.setBounds(100,148,550,180);
-        logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
-        panelPrincipal.add(logo);
+        // BOTÓN: CONTINUAR CON LA RESERVA
+        JButton botonPrincipal = new JButton("CONTINUAR CON LA RESERVA");
+        botonPrincipal.setFocusable(false);
+        botonPrincipal.setForeground(Color.white);
+        botonPrincipal.setFont(new Font("Arial", Font.BOLD, 14));
+        botonPrincipal.setBackground(Color.RED);
+        botonPrincipal.setOpaque(true);
+        botonPrincipal.setBorderPainted(false);
+        panelPrincipal.add(botonPrincipal, BorderLayout.SOUTH);
 
-        // BOTON: RETORNO
-        ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
-        JButton botonprincipal2 = new JButton("");
-        botonprincipal2.setFocusable(false);
-        botonprincipal2.setBounds(350, 620, 40, 40);
-        botonprincipal2.setIcon(new ImageIcon(imagenboton2.getImage().getScaledInstance(botonprincipal2.getWidth(), botonprincipal2.getHeight(), Image.SCALE_SMOOTH)));
-        botonprincipal2.setBorderPainted(false);
-        panelPrincipal.add(botonprincipal2);
-
-        botonprincipal2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-                new Pantalla_calle_fernandez();
-            }
+        botonPrincipal.addActionListener(e -> {
+            ventanaPrincipal.dispose();
+            new Pantalla_calles();  // Aquí puedes colocar tu siguiente pantalla
         });
 
+        // VISIBILIDAD
         ventanaPrincipal.setVisible(true);
+    }
+
+    private String[][] crearMatrizCalle(String tipoVehiculo) {
+        String[][] calle = new String[3][10]; // Tres filas y diez columnas
+        Random random = new Random();
+
+        // Lado izquierdo y derecho con sitios del tipo seleccionado
+        for (int i = 0; i < calle[0].length; i++) {
+            calle[0][i] = random.nextBoolean() ? asignarSitio(tipoVehiculo) : "No disponible";
+            calle[2][i] = random.nextBoolean() ? asignarSitio(tipoVehiculo) : "No disponible";
+        }
+
+        // Fila del medio: Carretera
+        for (int i = 0; i < calle[1].length; i++) {
+            calle[1][i] = "Carretera";
+        }
+
+        return calle;
+    }
+
+    private String asignarSitio(String tipoVehiculo) {
+        // Retorna el sitio según el tipo de vehículo seleccionado
+        switch (tipoVehiculo) {
+            case "Coche":
+                return "Sitio Coche";
+            case "Coche Eléctrico":
+                return "Sitio Eléctrico";
+            case "Moto":
+                return "Sitio Moto";
+            case "Minusválido":
+                return "Sitio Minusválido";
+            default:
+                return "Sitio Genérico";
+        }
+    }
+
+    public static void main(String[] args) {
+        new Pantalla_calle_guzman_matriz("Coche"); // Cambia "Coche" por el tipo de vehículo que quieras probar
     }
 }
