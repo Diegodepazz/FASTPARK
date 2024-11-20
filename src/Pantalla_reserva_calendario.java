@@ -19,28 +19,28 @@ public class Pantalla_reserva_calendario extends General {
 
         // TEXTO: COMENCEMOS CON LA RESERVA DE PLAZA
         JLabel bienvenida = new JLabel("COMENCEMOS CON LA RESERVA DE PLAZA");
-        bienvenida.setBounds(175, 30, 500, 50);
+        bienvenida.setBounds(182, 30, 500, 50);
         bienvenida.setForeground(new Color(63, 106, 184));
         bienvenida.setFont(new Font("Arial", Font.BOLD, 17));
         panelPrincipal.add(bienvenida);
 
         // SELECCIONAR MES Y AÑO
-        JLabel labelMesAño = new JLabel("Seleccione el Mes y Año:");
-        labelMesAño.setBounds(50, 100, 200, 30);
+        JLabel labelMesAño = new JLabel("SELECCIONE EL MES Y AÑO:");
+        labelMesAño.setBounds(120, 100, 200, 30);
         panelPrincipal.add(labelMesAño);
 
         JComboBox<String> comboMes = new JComboBox<>(new String[]{
                 "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
                 "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
         });
-        comboMes.setBounds(250, 100, 150, 30);
+        comboMes.setBounds(331, 100, 100, 30);
         panelPrincipal.add(comboMes);
 
         JComboBox<Integer> comboAño = new JComboBox<>();
         for (int i = 2020; i <= 2030; i++) {
             comboAño.addItem(i);
         }
-        comboAño.setBounds(420, 100, 100, 30);
+        comboAño.setBounds(480, 100, 100, 30);
         panelPrincipal.add(comboAño);
 
         // TABLA DE CALENDARIO
@@ -51,7 +51,7 @@ public class Pantalla_reserva_calendario extends General {
         tablaCalendario.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // Solo una celda seleccionada
         tablaCalendario.setCellSelectionEnabled(true); // Activar selección por celda
         JScrollPane scrollCalendario = new JScrollPane(tablaCalendario);
-        scrollCalendario.setBounds(50, 150, 600, 200);
+        scrollCalendario.setBounds(73, 165, 600, 200);
         panelPrincipal.add(scrollCalendario);
 
         // Renderizador para resaltar solo la celda seleccionada
@@ -80,8 +80,8 @@ public class Pantalla_reserva_calendario extends General {
         comboAño.addActionListener(e -> actualizarCalendario(comboAño, comboMes, modeloCalendario));
 
         // SELECCIONAR HORA
-        JLabel labelHora = new JLabel("Seleccione la Hora:");
-        labelHora.setBounds(50, 370, 200, 30);
+        JLabel labelHora = new JLabel("SELECCIONE LA HORA:");
+        labelHora.setBounds(220, 390, 200, 30);
         panelPrincipal.add(labelHora);
 
         JComboBox<String> comboHora = new JComboBox<>();
@@ -90,13 +90,13 @@ public class Pantalla_reserva_calendario extends General {
                 comboHora.addItem(String.format("%02d:%02d", hora, min));
             }
         }
-        comboHora.setBounds(250, 370, 150, 30);
+        comboHora.setBounds(420, 390, 100, 30);
         panelPrincipal.add(comboHora);
 
         // BOTÓN: CONTINUAR
         JButton botonprincipal = new JButton("CONTINUAR CON LA RESERVA");
         botonprincipal.setFocusable(false);
-        botonprincipal.setBounds(220, 450, 300, 32);
+        botonprincipal.setBounds(220, 570, 300, 32);
         botonprincipal.setForeground(Color.white);
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
         botonprincipal.setBackground(Color.RED);
