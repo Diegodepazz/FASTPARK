@@ -153,8 +153,4 @@ public class Pantalla_calle_guzman_matriz {
                 return "Sitio Genérico";
         }
     }
-
-    public static void main(String[] args) {
-        new Pantalla_calle_fernandez_matriz("Coche");
-    }
 }
