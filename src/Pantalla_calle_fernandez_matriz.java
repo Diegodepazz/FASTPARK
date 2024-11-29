@@ -106,7 +106,7 @@ public class Pantalla_calle_fernandez_matriz {
 
         botonPrincipal.addActionListener(e -> {
             ventanaPrincipal.dispose();
-            new Pantalla_calles(); // Aquí puedes colocar tu siguiente pantalla
+            new Pantalla_verticket(); // Aquí puedes colocar tu siguiente pantalla
         });
 
         // BOTÓN: RETORNO

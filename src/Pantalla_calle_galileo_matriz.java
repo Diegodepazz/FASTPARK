@@ -106,7 +106,7 @@ public class Pantalla_calle_galileo_matriz {
 
         botonPrincipal.addActionListener(e -> {
             ventanaPrincipal.dispose();
-            new Pantalla_calle_galileo(); // Aquí puedes colocar tu siguiente pantalla
+            new Pantalla_verticket(); // Aquí puedes colocar tu siguiente pantalla
         });
 
         // BOTÓN: RETORNO
