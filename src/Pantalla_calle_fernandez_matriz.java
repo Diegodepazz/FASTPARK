@@ -20,7 +20,7 @@ public class Pantalla_calle_fernandez_matriz {
         ventanaPrincipal.add(panelPrincipal, BorderLayout.CENTER);
 
         // TÍTULO
-        JLabel bienvenida = new JLabel("¡¡MATRIZ GUZMAN!!", SwingConstants.CENTER);
+        JLabel bienvenida = new JLabel("CALLE FERNANDEZ DE LOS RIOS", SwingConstants.CENTER);
         bienvenida.setForeground(new Color(63, 106, 184));
         bienvenida.setFont(new Font("Arial", Font.BOLD, 24));
         panelPrincipal.add(bienvenida, BorderLayout.NORTH);

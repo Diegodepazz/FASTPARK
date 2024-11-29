@@ -37,7 +37,7 @@ public class Pantalla_reserva_calendario extends General {
         panelPrincipal.add(comboMes);
 
         JComboBox<Integer> comboAño = new JComboBox<>();
-        for (int i = 2020; i <= 2030; i++) {
+        for (int i = 2024; i <= 2034; i++) {
             comboAño.addItem(i);
         }
         comboAño.setBounds(480, 100, 100, 30);
@@ -45,7 +45,7 @@ public class Pantalla_reserva_calendario extends General {
 
         // TABLA DE CALENDARIO
         String[] columnas = {"Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"};
-        DefaultTableModel modeloCalendario = new DefaultTableModel(columnas, 0);
+        DefaultTableModel modeloCalendario = new DefaultTableModel(columnas, 0); //Tabla del calendario
         JTable tablaCalendario = new JTable(modeloCalendario);
         tablaCalendario.setRowHeight(30);
         tablaCalendario.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); // Solo una celda seleccionada
