@@ -106,15 +106,15 @@ public class Pantalla_calle_guzman_matriz {
 
         botonPrincipal.addActionListener(e -> {
             ventanaPrincipal.dispose();
-            new Pantalla_calles(); // Aquí puedes colocar tu siguiente pantalla
+            new Pantalla_calle_guzman(); // Aquí puedes colocar tu siguiente pantalla
         });
 
         // BOTÓN: RETORNO
         ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);
-        botonprincipal2.setPreferredSize(new Dimension(50, 50));
-        botonprincipal2.setIcon(new ImageIcon(imagenboton2.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
+        botonprincipal2.setPreferredSize(new Dimension(30, 30));
+        botonprincipal2.setIcon(new ImageIcon(imagenboton2.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH)));
         botonprincipal2.setBorderPainted(false);
         panelBotones.add(botonprincipal2);
 
