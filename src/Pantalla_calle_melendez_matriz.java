@@ -8,22 +8,34 @@ public class Pantalla_calle_melendez_matriz {
 
     public Pantalla_calle_melendez_matriz(String tipoVehiculo) {
         // VENTANA
-        JFrame ventanaPrincipal = new JFrame("Matriz Guzmán");
+        JFrame ventanaPrincipal = new JFrame();
         ventanaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventanaPrincipal.setSize(800, 700);
         ventanaPrincipal.setLayout(new BorderLayout());
         ventanaPrincipal.setLocationRelativeTo(null);
 
-        // PANEL PRINCIPAL
-        JPanel panelPrincipal = new JPanel();
-        panelPrincipal.setLayout(new BorderLayout());
+        // Cambiar el color de fondo de la ventana a blanco
+        ventanaPrincipal.getContentPane().setBackground(Color.WHITE);  // Fondo blanco de la ventana
+
+        // PANEL PRINCIPAL CON GridBagLayout PARA CENTRAR TODO
+        JPanel panelPrincipal = new JPanel(new GridBagLayout());
+
+        // Cambiar el color de fondo del panel a blanco
+        panelPrincipal.setBackground(Color.WHITE);  // Fondo blanco del panel
+        GridBagConstraints gbc = new GridBagConstraints();
         ventanaPrincipal.add(panelPrincipal, BorderLayout.CENTER);
 
         // TÍTULO
         JLabel bienvenida = new JLabel("CALLE FERNANDEZ DE LOS RIOS", SwingConstants.CENTER);
         bienvenida.setForeground(new Color(63, 106, 184));
         bienvenida.setFont(new Font("Arial", Font.BOLD, 24));
-        panelPrincipal.add(bienvenida, BorderLayout.NORTH);
+
+        // Configurar posición del título
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.insets = new Insets(10, 0, 20, 0); // Margen superior e inferior
+        gbc.anchor = GridBagConstraints.CENTER;
+        panelPrincipal.add(bienvenida, gbc);
 
         // MATRIZ DE LA CALLE
         String[][] calle = crearMatrizCalle(tipoVehiculo);
@@ -36,20 +48,12 @@ public class Pantalla_calle_melendez_matriz {
             }
         };
 
-        // Ajustar tamaño de las filas y columnas para hacerlas más grandes y uniformes
-        tablaCalle.setRowHeight(60); // Tamaño mayor para las filas
-        tablaCalle.getColumnModel().getColumn(0).setPreferredWidth(150); // Columna izquierda más ancha
-        tablaCalle.getColumnModel().getColumn(calle[0].length - 1).setPreferredWidth(150); // Columna derecha más ancha
-        tablaCalle.getColumnModel().getColumn(1).setPreferredWidth(300); // Columna central (carretera)
+        // Ajustar tamaño de las filas y columnas
+        int alturaFila = 38; // Ajusta el tamaño según la ventana
+        tablaCalle.setRowHeight(alturaFila);
+        tablaCalle.setFont(new Font("Arial", Font.PLAIN, 14));
 
-        tablaCalle.setFont(new Font("Arial", Font.PLAIN, 16));
-
-        // RENDERIZADOR PARA CENTRAR TEXTO Y APLICAR COLORES
-        DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
-        renderer.setHorizontalAlignment(SwingConstants.CENTER);
-        tablaCalle.setDefaultRenderer(Object.class, renderer);
-
-        // APLICAR COLORES A LAS CELDAS
+        // Centrar texto y aplicar colores
         tablaCalle.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value,
@@ -77,27 +81,17 @@ public class Pantalla_calle_melendez_matriz {
             }
         }
 
+        // Añadir la tabla centrada
+        gbc.gridy = 1;
+        gbc.insets = new Insets(10, 0, 20, 0);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         JScrollPane scrollPane = new JScrollPane(tablaCalle);
-        panelPrincipal.add(scrollPane, BorderLayout.CENTER);
+        scrollPane.setPreferredSize(new Dimension(600, 400)); // Ajusta tamaño según la ventana
+        panelPrincipal.add(scrollPane, gbc);
 
-        // Añadir un MouseListener para detectar clics en la tabla
-        tablaCalle.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                int fila = tablaCalle.rowAtPoint(e.getPoint());
-                int columna = tablaCalle.columnAtPoint(e.getPoint());
-
-                String selectedPlaza = (String) tablaCalle.getValueAt(fila, columna);
-
-                if (selectedPlaza.equals("No disponible")) {
-                    JOptionPane.showMessageDialog(ventanaPrincipal, "¡Error! Plaza no disponible.",
-                            "Error", JOptionPane.ERROR_MESSAGE);
-                } else if (!selectedPlaza.equals("Carretera")) {
-                    JOptionPane.showMessageDialog(ventanaPrincipal, "Has seleccionado: " + selectedPlaza,
-                            "Plaza seleccionada", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
-        });
+        // PANEL PARA LOS BOTONES
+        JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 0));
+        panelBotones.setBackground(Color.WHITE);  // Fondo blanco del panel de botones
 
         // BOTÓN: CONTINUAR CON LA RESERVA
         JButton botonPrincipal = new JButton("CONTINUAR CON LA RESERVA");
@@ -107,32 +101,51 @@ public class Pantalla_calle_melendez_matriz {
         botonPrincipal.setBackground(Color.RED);
         botonPrincipal.setOpaque(true);
         botonPrincipal.setBorderPainted(false);
-        panelPrincipal.add(botonPrincipal, BorderLayout.SOUTH);
+        botonPrincipal.setPreferredSize(new Dimension(300, 50)); // Tamaño del botón
+        panelBotones.add(botonPrincipal);
 
         botonPrincipal.addActionListener(e -> {
             ventanaPrincipal.dispose();
             new Pantalla_calles(); // Aquí puedes colocar tu siguiente pantalla
         });
 
+        // BOTÓN: RETORNO
+        ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
+        JButton botonprincipal2 = new JButton("");
+        botonprincipal2.setFocusable(false);
+        botonprincipal2.setPreferredSize(new Dimension(50, 50));
+        botonprincipal2.setIcon(new ImageIcon(imagenboton2.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
+        botonprincipal2.setBorderPainted(false);
+        panelBotones.add(botonprincipal2);
+
+        botonprincipal2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ventanaPrincipal.dispose();
+                new Pantalla_calles();
+            }
+        });
+
+        // Configurar posición de los botones
+        gbc.gridy = 2;
+        gbc.insets = new Insets(20, 0, 10, 0);
+        gbc.anchor = GridBagConstraints.CENTER;
+        panelPrincipal.add(panelBotones, gbc);
+
         // VISIBILIDAD
         ventanaPrincipal.setVisible(true);
     }
 
     private String[][] crearMatrizCalle(String tipoVehiculo) {
-        int filas = 10; // Menos filas para que no quede demasiado grande
-        int columnas = 3; // Tres columnas: izquierda, central y derecha
+        int filas = 10; // Número de filas
+        int columnas = 3; // Número de columnas
         String[][] calle = new String[filas][columnas];
         Random random = new Random();
 
         // Llenar la matriz con los huecos adecuados
         for (int i = 0; i < filas; i++) {
-            // Columna izquierda (un solo hueco de aparcamiento)
             calle[i][0] = random.nextBoolean() ? asignarSitio(tipoVehiculo) : "No disponible";
-
-            // Columna central (solo un hueco de carretera)
             calle[i][1] = "Carretera";
-
-            // Columna derecha (un solo hueco de aparcamiento)
             calle[i][2] = random.nextBoolean() ? asignarSitio(tipoVehiculo) : "No disponible";
         }
 
