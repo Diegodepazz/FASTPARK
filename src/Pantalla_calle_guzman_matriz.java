@@ -122,7 +122,7 @@ public class Pantalla_calle_guzman_matriz {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
-                new Pantalla_calles();
+                new Pantalla_calle_guzman();
             }
         });
 
