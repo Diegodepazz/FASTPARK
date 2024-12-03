@@ -15,13 +15,11 @@ public class Pantalla_calle_galileo_matriz {
         ventanaPrincipal.setLocationRelativeTo(null);
 
         // Cambiar el color de fondo de la ventana a blanco
-        ventanaPrincipal.getContentPane().setBackground(Color.WHITE);  // Fondo blanco de la ventana
+        ventanaPrincipal.getContentPane().setBackground(Color.WHITE);
 
         // PANEL PRINCIPAL CON GridBagLayout PARA CENTRAR TODO
         JPanel panelPrincipal = new JPanel(new GridBagLayout());
-
-        // Cambiar el color de fondo del panel a blanco
-        panelPrincipal.setBackground(Color.WHITE);  // Fondo blanco del panel
+        panelPrincipal.setBackground(Color.WHITE); // Fondo blanco del panel
         GridBagConstraints gbc = new GridBagConstraints();
         ventanaPrincipal.add(panelPrincipal, BorderLayout.CENTER);
 
@@ -30,10 +28,9 @@ public class Pantalla_calle_galileo_matriz {
         bienvenida.setForeground(new Color(63, 106, 184));
         bienvenida.setFont(new Font("Arial", Font.BOLD, 24));
 
-        // Configurar posición del título
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.insets = new Insets(10, 0, 20, 0); // Margen superior e inferior
+        gbc.insets = new Insets(10, 0, 20, 0);
         gbc.anchor = GridBagConstraints.CENTER;
         panelPrincipal.add(bienvenida, gbc);
 
@@ -48,12 +45,8 @@ public class Pantalla_calle_galileo_matriz {
             }
         };
 
-        // Ajustar tamaño de las filas y columnas
-        int alturaFila = 38; // Ajusta el tamaño según la ventana
-        tablaCalle.setRowHeight(alturaFila);
+        tablaCalle.setRowHeight(38);
         tablaCalle.setFont(new Font("Arial", Font.PLAIN, 14));
-
-        // Centrar texto y aplicar colores
         tablaCalle.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value,
@@ -61,13 +54,13 @@ public class Pantalla_calle_galileo_matriz {
                 Component cell = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
                 cell.setForeground(Color.BLACK);
 
-                if (value.equals("No disponible")) {
+                if ("No disponible".equals(value)) {
                     cell.setBackground(Color.LIGHT_GRAY);
-                } else if (value.equals("Carretera")) {
+                } else if ("Carretera".equals(value)) {
                     cell.setBackground(Color.DARK_GRAY);
                     cell.setForeground(Color.WHITE);
                 } else {
-                    cell.setBackground(new Color(144, 238, 144)); // Verde claro para sitios disponibles
+                    cell.setBackground(new Color(144, 238, 144)); // Verde claro
                 }
                 setHorizontalAlignment(SwingConstants.CENTER);
                 return cell;
@@ -81,35 +74,46 @@ public class Pantalla_calle_galileo_matriz {
             }
         }
 
-        // Añadir la tabla centrada
         gbc.gridy = 1;
         gbc.insets = new Insets(10, 0, 20, 0);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         JScrollPane scrollPane = new JScrollPane(tablaCalle);
-        scrollPane.setPreferredSize(new Dimension(600, 400)); // Ajusta tamaño según la ventana
+        scrollPane.setPreferredSize(new Dimension(600, 400));
         panelPrincipal.add(scrollPane, gbc);
 
         // PANEL PARA LOS BOTONES
         JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 0));
-        panelBotones.setBackground(Color.WHITE);  // Fondo blanco del panel de botones
+        panelBotones.setBackground(Color.WHITE);
 
-        // BOTÓN: CONTINUAR CON LA RESERVA
         JButton botonPrincipal = new JButton("CONTINUAR CON LA RESERVA");
         botonPrincipal.setFocusable(false);
-        botonPrincipal.setForeground(Color.white);
+        botonPrincipal.setForeground(Color.WHITE);
         botonPrincipal.setFont(new Font("Arial", Font.BOLD, 16));
         botonPrincipal.setBackground(Color.RED);
         botonPrincipal.setOpaque(true);
         botonPrincipal.setBorderPainted(false);
-        botonPrincipal.setPreferredSize(new Dimension(300, 50)); // Tamaño del botón
+        botonPrincipal.setPreferredSize(new Dimension(300, 50));
         panelBotones.add(botonPrincipal);
 
+        // Validar la selección antes de continuar
         botonPrincipal.addActionListener(e -> {
-            ventanaPrincipal.dispose();
-            new Pantalla_verticket(); // Aquí puedes colocar tu siguiente pantalla
+            int filaSeleccionada = tablaCalle.getSelectedRow();
+            int columnaSeleccionada = tablaCalle.getSelectedColumn();
+
+            if (filaSeleccionada == -1 || columnaSeleccionada == -1) {
+                JOptionPane.showMessageDialog(ventanaPrincipal, "Por favor, selecciona una plaza.", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                String valorCelda = (String) tablaCalle.getValueAt(filaSeleccionada, columnaSeleccionada);
+                if ("No disponible".equals(valorCelda) || "Carretera".equals(valorCelda)) {
+                    JOptionPane.showMessageDialog(ventanaPrincipal, "Espacio no disponible. Seleccione otra plaza ", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(ventanaPrincipal, "Reserva realizada correctamente.");
+                    ventanaPrincipal.dispose();
+                    new Pantalla_verticket(); // Continuar con la siguiente pantalla
+                }
+            }
         });
 
-        // BOTÓN: RETORNO
         ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);
@@ -118,31 +122,25 @@ public class Pantalla_calle_galileo_matriz {
         botonprincipal2.setBorderPainted(false);
         panelBotones.add(botonprincipal2);
 
-        botonprincipal2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-                new Pantalla_calle_galileo();
-            }
+        botonprincipal2.addActionListener(e -> {
+            ventanaPrincipal.dispose();
+            new Pantalla_calle_galileo();
         });
 
-        // Configurar posición de los botones
         gbc.gridy = 2;
         gbc.insets = new Insets(20, 0, 10, 0);
         gbc.anchor = GridBagConstraints.CENTER;
         panelPrincipal.add(panelBotones, gbc);
 
-        // VISIBILIDAD
         ventanaPrincipal.setVisible(true);
     }
 
     private String[][] crearMatrizCalle(String tipoVehiculo) {
-        int filas = 10; // Número de filas
-        int columnas = 3; // Número de columnas
+        int filas = 10;
+        int columnas = 3;
         String[][] calle = new String[filas][columnas];
         Random random = new Random();
 
-        // Llenar la matriz con los huecos adecuados
         for (int i = 0; i < filas; i++) {
             calle[i][0] = random.nextBoolean() ? asignarSitio(tipoVehiculo) : "No disponible";
             calle[i][1] = "Carretera";
