@@ -1,3 +1,9 @@
+package Pantalla_calendario;
+
+import Main.General_ventanas;
+import Pantalla_calles.Mapa_calles;
+import Pantalla_reserva_vehiculo.Opciones_reserva_ticket;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -6,8 +12,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
 
-public class Pantalla_reserva_calendario extends General {
-    public Pantalla_reserva_calendario() {
+public class Reserva_calendario extends General_ventanas {
+    public Reserva_calendario() {
         // VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -136,7 +142,7 @@ public class Pantalla_reserva_calendario extends General {
                                 " a las " + horaSeleccionada);
 
                 ventanaPrincipal.dispose();
-                new Pantalla_calles();
+                new Mapa_calles();
             }
         });
 
@@ -153,7 +159,7 @@ public class Pantalla_reserva_calendario extends General {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
-                new Pantalla_opciones();
+                new Opciones_reserva_ticket();
             }
         });
 

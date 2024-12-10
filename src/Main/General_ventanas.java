@@ -1,6 +1,8 @@
+package Main;
+
 import javax.swing.*;
 
-public class General {
+public class General_ventanas {
     public JFrame crearventana(){
         JFrame ventana = new JFrame();
         ventana.setSize(760,760);

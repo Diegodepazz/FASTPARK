@@ -1,10 +1,15 @@
+package Pantalla_inicio_app;
+
+import Main.General_ventanas;
+import Pantalla_registro.Opciones_usuario;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Pantalla_principal extends General {
-    public Pantalla_principal(){
+public class Inicio extends General_ventanas {
+    public Inicio(){
 
         //VENTANA
         JFrame ventanaPrincipal =  crearventana();
@@ -33,7 +38,7 @@ public class Pantalla_principal extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_inicio();
+                new Opciones_usuario();
             }
         });
 

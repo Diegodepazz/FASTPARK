@@ -1,10 +1,15 @@
+package Pantalla_calles;
+
+import Main.General_ventanas;
+import Pantalla_calendario.Reserva_calendario;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Pantalla_calles extends General {
-    public Pantalla_calles(){
+public class Mapa_calles extends General_ventanas {
+    public Mapa_calles(){
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -54,7 +59,7 @@ public class Pantalla_calles extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_calle_guzman();
+                new Calle_guzmanelbueno();
             }
         });
 
@@ -75,7 +80,7 @@ public class Pantalla_calles extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_calle_melendez();
+                new Calle_melendezvaldes();
             }
         });
 
@@ -97,7 +102,7 @@ public class Pantalla_calles extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_calle_galileo();
+                new Calle_galileo();
             }
         });
 
@@ -118,7 +123,7 @@ public class Pantalla_calles extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_calle_fernandez();
+                new Calle_fernandezdelosrios();
             }
         });
 
@@ -136,7 +141,7 @@ public class Pantalla_calles extends General {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
-                new Pantalla_reserva_calendario();
+                new Reserva_calendario();
             }
         });
 

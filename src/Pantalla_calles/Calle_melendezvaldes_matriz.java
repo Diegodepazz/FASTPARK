@@ -1,12 +1,15 @@
+package Pantalla_calles;
+
+import Pantalla_ticket.Ticket;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.Random;
 
-public class Pantalla_calle_fernandez_matriz {
+public class Calle_melendezvaldes_matriz {
 
-    public Pantalla_calle_fernandez_matriz(String tipoVehiculo) {
+    public Calle_melendezvaldes_matriz(String tipoVehiculo) {
         // VENTANA
         JFrame ventanaPrincipal = new JFrame();
         ventanaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -109,7 +112,7 @@ public class Pantalla_calle_fernandez_matriz {
                 } else {
                     JOptionPane.showMessageDialog(ventanaPrincipal, "Reserva realizada correctamente.");
                     ventanaPrincipal.dispose();
-                    new Pantalla_verticket(); // Continuar con la siguiente pantalla
+                    new Ticket(); // Continuar con la siguiente pantalla
                 }
             }
         });
@@ -124,7 +127,7 @@ public class Pantalla_calle_fernandez_matriz {
 
         botonprincipal2.addActionListener(e -> {
             ventanaPrincipal.dispose();
-            new Pantalla_calle_fernandez();
+            new Calle_melendezvaldes();
         });
 
         gbc.gridy = 2;

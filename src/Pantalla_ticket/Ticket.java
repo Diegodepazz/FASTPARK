@@ -1,10 +1,16 @@
+package Pantalla_ticket;
+
+import Main.General_ventanas;
+import Pantalla_reserva_vehiculo.Opciones_reserva_ticket;
+import Pantalla_inicio_app.Inicio;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Pantalla_verticket extends General {
-    public Pantalla_verticket(){
+public class Ticket extends General_ventanas {
+    public Ticket(){
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -48,7 +54,7 @@ public class Pantalla_verticket extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_principal();
+                new Inicio();
             }
         });
 
@@ -72,7 +78,7 @@ public class Pantalla_verticket extends General {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
-                new Pantalla_opciones();
+                new Opciones_reserva_ticket();
             }
         });
         ventanaPrincipal.setVisible(true);

@@ -1,10 +1,14 @@
+package Pantalla_registro;
+
+import Main.General_ventanas;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Pantalla_registro extends General {
-    public Pantalla_registro(){
+public class Registro extends General_ventanas {
+    public Registro(){
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -40,7 +44,7 @@ public class Pantalla_registro extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_iniciosesion();
+                new Inicio_sesion();
             }
         });
 
@@ -58,7 +62,7 @@ public class Pantalla_registro extends General {
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
 
-                new Pantalla_inicio();
+                new Opciones_usuario();
             }
         });
 

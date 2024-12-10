@@ -1,10 +1,14 @@
+package Pantalla_calles;
+
+import Main.General_ventanas;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Pantalla_calle_guzman extends General {
-    public Pantalla_calle_guzman() {
+public class Calle_galileo extends General_ventanas {
+    public Calle_galileo() {
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
 
@@ -21,8 +25,8 @@ public class Pantalla_calle_guzman extends General {
         panelPrincipal.add(desplegableVehiculos);
 
         //TEXTO: SE ENCUENTRA EN LA CALLE GUZMÁN EL BUENO
-        JLabel calle = new JLabel("USTED SE ENCUENTRA EN LA CALLE GUZMÁN EL BUENO");
-        calle.setBounds(138, 65, 500, 100);
+        JLabel calle = new JLabel("USTED SE ENCUENTRA EN LA CALLE GALILEO");
+        calle.setBounds(182, 65, 500, 100);
         calle.setForeground(new Color(63, 106, 184));
         calle.setFont(new Font("Arial", Font.BOLD, 17));
         panelPrincipal.add(calle);
@@ -65,7 +69,7 @@ public class Pantalla_calle_guzman extends General {
                         JOptionPane.INFORMATION_MESSAGE);
 
                 ventanaPrincipal.dispose();
-                new Pantalla_calle_guzman_matriz(tipoVehiculoSeleccionado);  // Aquí puedes pasar la información a la siguiente pantalla si lo necesitas
+                new Calle_galileo_matriz(tipoVehiculoSeleccionado);  // Aquí puedes pasar la información a la siguiente pantalla si lo necesitas
             }
         });
 
@@ -82,7 +86,7 @@ public class Pantalla_calle_guzman extends General {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ventanaPrincipal.dispose();
-                new Pantalla_calles();
+                new Mapa_calles();
             }
         });
 
