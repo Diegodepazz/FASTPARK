@@ -57,9 +57,8 @@ public class Mapa_calles extends General_ventanas {
         botonprincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
                 new Calle_guzmanelbueno();
+                ventanaPrincipal.dispose();
             }
         });
 
@@ -78,9 +77,8 @@ public class Mapa_calles extends General_ventanas {
         botonprincipal1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
                 new Calle_melendezvaldes();
+                ventanaPrincipal.dispose();
             }
         });
 
@@ -100,9 +98,8 @@ public class Mapa_calles extends General_ventanas {
         botonprincipal2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
                 new Calle_galileo();
+                ventanaPrincipal.dispose();
             }
         });
 
@@ -121,9 +118,8 @@ public class Mapa_calles extends General_ventanas {
         botonprincipal3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
                 new Calle_fernandezdelosrios();
+                ventanaPrincipal.dispose();
             }
         });
 
@@ -140,8 +136,8 @@ public class Mapa_calles extends General_ventanas {
         botonprincipal4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
                 new Reserva_calendario();
+                ventanaPrincipal.dispose();
             }
         });
 

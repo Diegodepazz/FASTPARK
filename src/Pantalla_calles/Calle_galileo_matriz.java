@@ -111,8 +111,8 @@ public class Calle_galileo_matriz {
                     JOptionPane.showMessageDialog(ventanaPrincipal, "Espacio no disponible. Seleccione otra plaza ", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(ventanaPrincipal, "Reserva realizada correctamente.");
-                    ventanaPrincipal.dispose();
                     new Ticket(); // Continuar con la siguiente pantalla
+                    ventanaPrincipal.dispose();
                 }
             }
         });
@@ -126,8 +126,8 @@ public class Calle_galileo_matriz {
         panelBotones.add(botonprincipal2);
 
         botonprincipal2.addActionListener(e -> {
-            ventanaPrincipal.dispose();
             new Calle_galileo();
+            ventanaPrincipal.dispose();
         });
 
         gbc.gridy = 2;

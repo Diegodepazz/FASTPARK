@@ -68,8 +68,8 @@ public class Calle_guzmanelbueno extends General_ventanas {
                         "Información de reserva",
                         JOptionPane.INFORMATION_MESSAGE);
 
-                ventanaPrincipal.dispose();
                 new Calle_guzmanelbueno_matriz(tipoVehiculoSeleccionado);  // Aquí puedes pasar la información a la siguiente pantalla si lo necesitas
+                ventanaPrincipal.dispose();
             }
         });
 

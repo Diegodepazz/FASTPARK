@@ -46,9 +46,8 @@ public class Inicio_sesion extends General_ventanas {
         botonprincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
                 new Opciones_reserva_ticket();
+                ventanaPrincipal.dispose();
             }
         });
 
@@ -64,9 +63,8 @@ public class Inicio_sesion extends General_ventanas {
         botonprincipal1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
                 new Opciones_usuario();
+                ventanaPrincipal.dispose();
             }
         });
 

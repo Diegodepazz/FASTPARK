@@ -54,9 +54,8 @@ public class Opciones_reserva_ticket extends General_ventanas {
         botonprincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
                 new Reserva_calendario();
+                ventanaPrincipal.dispose();
             }
         });
 
@@ -75,9 +74,8 @@ public class Opciones_reserva_ticket extends General_ventanas {
         botonprincipal1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
                 new Ticket();
+                ventanaPrincipal.dispose();
             }
         });
 
@@ -93,8 +91,8 @@ public class Opciones_reserva_ticket extends General_ventanas {
         botonprincipal2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
                 new Opciones_usuario();
+                ventanaPrincipal.dispose();
             }
         });
 

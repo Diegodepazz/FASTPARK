@@ -44,9 +44,8 @@ public class Opciones_usuario extends General_ventanas {
         botonprincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
                 new Inicio_sesion();
+                ventanaPrincipal.dispose();
             }
         });
 
@@ -66,9 +65,8 @@ public class Opciones_usuario extends General_ventanas {
         botonprincipal1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
                 new Registro();
+                ventanaPrincipal.dispose();
             }
         });
 

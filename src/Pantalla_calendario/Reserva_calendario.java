@@ -141,8 +141,9 @@ public class Reserva_calendario extends General_ventanas {
                         "Fecha seleccionada: " + diaSeleccionado + "/" + (mesSeleccionado + 1) + "/" + añoSeleccionado +
                                 " a las " + horaSeleccionada);
 
-                ventanaPrincipal.dispose();
                 new Mapa_calles();
+                ventanaPrincipal.dispose();
+
             }
         });
 
@@ -158,8 +159,8 @@ public class Reserva_calendario extends General_ventanas {
         botonprincipal2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
                 new Opciones_reserva_ticket();
+                ventanaPrincipal.dispose();
             }
         });
 

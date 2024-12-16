@@ -36,9 +36,8 @@ public class Inicio extends General_ventanas {
         botonprincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
-
                 new Opciones_usuario();
+                ventanaPrincipal.dispose();
             }
         });
 

@@ -68,8 +68,8 @@ public class Calle_melendezvaldes extends General_ventanas {
                         "Información de reserva",
                         JOptionPane.INFORMATION_MESSAGE);
 
-                ventanaPrincipal.dispose();
                 new Calle_melendezvaldes_matriz(tipoVehiculoSeleccionado);  // Aquí puedes pasar la información a la siguiente pantalla si lo necesitas
+                ventanaPrincipal.dispose();
             }
         });
 
@@ -85,11 +85,11 @@ public class Calle_melendezvaldes extends General_ventanas {
         botonprincipal2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ventanaPrincipal.dispose();
                 new Mapa_calles();
+                ventanaPrincipal.dispose();
+
             }
         });
-
         ventanaPrincipal.setVisible(true);
     }
 }

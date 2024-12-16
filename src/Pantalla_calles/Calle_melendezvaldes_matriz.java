@@ -111,8 +111,8 @@ public class Calle_melendezvaldes_matriz {
                     JOptionPane.showMessageDialog(ventanaPrincipal, "Espacio no disponible. Seleccione otra plaza ", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(ventanaPrincipal, "Reserva realizada correctamente.");
-                    ventanaPrincipal.dispose();
                     new Ticket(); // Continuar con la siguiente pantalla
+                    ventanaPrincipal.dispose();
                 }
             }
         });
@@ -126,8 +126,8 @@ public class Calle_melendezvaldes_matriz {
         panelBotones.add(botonprincipal2);
 
         botonprincipal2.addActionListener(e -> {
-            ventanaPrincipal.dispose();
             new Calle_melendezvaldes();
+            ventanaPrincipal.dispose();
         });
 
         gbc.gridy = 2;
