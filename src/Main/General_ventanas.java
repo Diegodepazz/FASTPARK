@@ -1,5 +1,4 @@
 package Main;
-
 import javax.swing.*;
 
 public class General_ventanas {

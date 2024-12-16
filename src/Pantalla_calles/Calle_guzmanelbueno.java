@@ -1,18 +1,26 @@
 package Pantalla_calles;
 
 import Main.General_ventanas;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase que representa la interfaz gráfica para la calle Guzmán el Bueno.
+ * Permite al usuario seleccionar un tipo de vehículo y continuar con el proceso de reserva.
+ */
 public class Calle_guzmanelbueno extends General_ventanas {
+    /**
+     * Constructor de la clase Calle_guzmanelbueno.
+     * Configura la ventana principal, paneles, componentes gráficos y su funcionalidad.
+     */
     public Calle_guzmanelbueno() {
-        //VENTANA
+
+        // VENTANA: CONFIGURACIÓN DE LA VENTANA PRINCIPAL
         JFrame ventanaPrincipal = crearventana();
 
-        //PANEL
+        // PANEL: CONFIGURACIÓN DEL PANEL PRINCIPAL
         JPanel panelPrincipal = new JPanel();
         panelPrincipal.setLayout(null);
         panelPrincipal.setBackground(Color.white);
@@ -24,28 +32,28 @@ public class Calle_guzmanelbueno extends General_ventanas {
         desplegableVehiculos.setBounds(270, 409, 200, 30);
         panelPrincipal.add(desplegableVehiculos);
 
-        //TEXTO: SE ENCUENTRA EN LA CALLE GUZMÁN EL BUENO
+        // TEXTO: USTED SE ENCUENTRA EN LA CALLE GUZMÁN EL BUENO
         JLabel calle = new JLabel("USTED SE ENCUENTRA EN LA CALLE GUZMÁN EL BUENO");
         calle.setBounds(138, 65, 500, 100);
         calle.setForeground(new Color(63, 106, 184));
         calle.setFont(new Font("Arial", Font.BOLD, 17));
         panelPrincipal.add(calle);
 
-        //AGREGAR IMAGEN LOGO
+        // LOGO
         ImageIcon imagenlogo = new ImageIcon("Imagenes/FOTO PARKING.png");
         JLabel logo = new JLabel();
-        logo.setBounds(195,175,350,120);
+        logo.setBounds(195, 175, 350, 120);
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(logo);
 
-        //TEXTO: ELIJA EL TIPO DE VEHÍCULO QUE DESEE ESTACIONAR
+        // TEXTO: ELIJA EL TIPO DE VEHÍCULO QUE DESEE ESTACIONAR
         JLabel vehiculo = new JLabel("ELIJA EL TIPO DE VEHÍCULO QUE DESEE ESTACIONAR:");
         vehiculo.setBounds(145, 315, 500, 100);
         vehiculo.setForeground(new Color(63, 106, 184));
         vehiculo.setFont(new Font("Arial", Font.BOLD, 17));
         panelPrincipal.add(vehiculo);
 
-        //BOTON: CONTINUAR CON LA RESERVA
+        // BOTÓN: CONTINUAR CON LA RESERVA
         JButton botonprincipal = new JButton("CONTINUAR CON LA RESERVA");
         botonprincipal.setFocusable(false);
         botonprincipal.setBounds(220, 555, 300, 32);
@@ -56,24 +64,30 @@ public class Calle_guzmanelbueno extends General_ventanas {
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
+        /**
+         * Acción del botón para continuar con la reserva.
+         * Obtiene el tipo de vehículo seleccionado y abre la siguiente pantalla.
+         */
         botonprincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Obtener el tipo de vehículo seleccionado
+
+                // OBTENER EL TIPO DE VEHÍCULO SELECCIONADO
                 String tipoVehiculoSeleccionado = (String) desplegableVehiculos.getSelectedItem();
 
-                // Mostrar el tipo de vehículo seleccionado o pasar la información
+                // MOSTRAR EL TIPO DE VEHÍCULO SELECCIONADO AL USUARIO
                 JOptionPane.showMessageDialog(ventanaPrincipal,
                         "Tipo de vehículo seleccionado: " + tipoVehiculoSeleccionado,
                         "Información de reserva",
                         JOptionPane.INFORMATION_MESSAGE);
 
-                new Calle_guzmanelbueno_matriz(tipoVehiculoSeleccionado);  // Aquí puedes pasar la información a la siguiente pantalla si lo necesitas
+                // PASAR A LA SIGUIENTE PANTALLA
+                new Calle_guzmanelbueno_matriz(tipoVehiculoSeleccionado);
                 ventanaPrincipal.dispose();
             }
         });
 
-        // BOTON: RETORNO
+        // BOTÓN: RETORNO AL MAPA DE LAS CALLES
         ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);
@@ -82,6 +96,10 @@ public class Calle_guzmanelbueno extends General_ventanas {
         botonprincipal2.setBorderPainted(false);
         panelPrincipal.add(botonprincipal2);
 
+        /**
+         * Acción del botón para retornar al mapa de calles.
+         * Cierra la ventana actual y abre la pantalla del mapa.
+         */
         botonprincipal2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -90,6 +108,7 @@ public class Calle_guzmanelbueno extends General_ventanas {
             }
         });
 
+        // MOSTRAR LA VENTANA PRINCIPAL
         ventanaPrincipal.setVisible(true);
     }
 }

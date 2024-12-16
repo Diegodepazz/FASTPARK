@@ -1,15 +1,26 @@
 package Pantalla_calles;
 
 import Pantalla_ticket.Ticket;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.util.Random;
 
+/**
+ * Clase que representa la pantalla para visualizar la matriz de espacios de estacionamiento
+ * en la calle Galileo. Permite al usuario seleccionar una plaza disponible y continuar con
+ * la reserva o regresar a la pantalla anterior.
+ */
 public class Calle_galileo_matriz {
-
+    /**
+     * Constructor de la clase.
+     * Inicializa la interfaz gráfica con la matriz de plazas de estacionamiento,
+     * un botón para continuar con la reserva y otro para regresar a la pantalla anterior.
+     *
+     * @param tipoVehiculo El tipo de vehículo seleccionado por el usuario.
+     */
     public Calle_galileo_matriz(String tipoVehiculo) {
+
         // VENTANA
         JFrame ventanaPrincipal = new JFrame();
         ventanaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -17,16 +28,16 @@ public class Calle_galileo_matriz {
         ventanaPrincipal.setLayout(new BorderLayout());
         ventanaPrincipal.setLocationRelativeTo(null);
 
-        // Cambiar el color de fondo de la ventana a blanco
+        // CAMBIAR EL COLOR DE FONDO DE LA VENTANA A BLANCO
         ventanaPrincipal.getContentPane().setBackground(Color.WHITE);
 
         // PANEL PRINCIPAL CON GridBagLayout PARA CENTRAR TODO
         JPanel panelPrincipal = new JPanel(new GridBagLayout());
-        panelPrincipal.setBackground(Color.WHITE); // Fondo blanco del panel
+        panelPrincipal.setBackground(Color.WHITE); // FONDO BLANCO DEL PANEL
         GridBagConstraints gbc = new GridBagConstraints();
         ventanaPrincipal.add(panelPrincipal, BorderLayout.CENTER);
 
-        // TÍTULO
+        // TÍTULO: CALLE FERNANDEZ DE LOS RIOS
         JLabel bienvenida = new JLabel("CALLE FERNANDEZ DE LOS RIOS", SwingConstants.CENTER);
         bienvenida.setForeground(new Color(63, 106, 184));
         bienvenida.setFont(new Font("Arial", Font.BOLD, 24));
@@ -44,7 +55,7 @@ public class Calle_galileo_matriz {
         JTable tablaCalle = new JTable(calle.length, calle[0].length) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                return false; // Deshabilitar edición de celdas
+                return false; // DESHABILITAR EDICIÓN DE CELDAS
             }
         };
 
@@ -63,7 +74,7 @@ public class Calle_galileo_matriz {
                     cell.setBackground(Color.DARK_GRAY);
                     cell.setForeground(Color.WHITE);
                 } else {
-                    cell.setBackground(new Color(144, 238, 144)); // Verde claro
+                    cell.setBackground(new Color(144, 238, 144)); // VERDE CLARO
                 }
                 setHorizontalAlignment(SwingConstants.CENTER);
                 return cell;
@@ -98,20 +109,20 @@ public class Calle_galileo_matriz {
         botonPrincipal.setPreferredSize(new Dimension(300, 50));
         panelBotones.add(botonPrincipal);
 
-        // Validar la selección antes de continuar
+        // VALIDAR LA SELECCIÓN ANTES DE CONTINUAR
         botonPrincipal.addActionListener(e -> {
             int filaSeleccionada = tablaCalle.getSelectedRow();
             int columnaSeleccionada = tablaCalle.getSelectedColumn();
 
             if (filaSeleccionada == -1 || columnaSeleccionada == -1) {
-                JOptionPane.showMessageDialog(ventanaPrincipal, "Por favor, selecciona una plaza.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(ventanaPrincipal, "POR FAVOR, SELECCIONA UNA PLAZA.", "ERROR", JOptionPane.ERROR_MESSAGE);
             } else {
                 String valorCelda = (String) tablaCalle.getValueAt(filaSeleccionada, columnaSeleccionada);
                 if ("No disponible".equals(valorCelda) || "Carretera".equals(valorCelda)) {
-                    JOptionPane.showMessageDialog(ventanaPrincipal, "Espacio no disponible. Seleccione otra plaza ", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(ventanaPrincipal, "ESPACIO NO DISPONIBLE. SELECCIONE OTRA PLAZA ", "ERROR", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(ventanaPrincipal, "Reserva realizada correctamente.");
-                    new Ticket(); // Continuar con la siguiente pantalla
+                    JOptionPane.showMessageDialog(ventanaPrincipal, "RESERVA REALIZADA CORRECTAMENTE.");
+                    new Ticket(); // CONTINUAR CON LA SIGUIENTE PANTALLA
                     ventanaPrincipal.dispose();
                 }
             }
@@ -137,7 +148,12 @@ public class Calle_galileo_matriz {
 
         ventanaPrincipal.setVisible(true);
     }
-
+    /**
+     * MÉTODO PARA CREAR LA MATRIZ DE LA CALLE BASADA EN EL TIPO DE VEHÍCULO SELECCIONADO.
+     *
+     * @param tipoVehiculo El tipo de vehículo seleccionado.
+     * @return Una matriz de String que representa la distribución de la calle.
+     */
     private String[][] crearMatrizCalle(String tipoVehiculo) {
         int filas = 10;
         int columnas = 3;
@@ -152,7 +168,12 @@ public class Calle_galileo_matriz {
 
         return calle;
     }
-
+    /**
+     * MÉTODO PARA ASIGNAR EL TIPO DE SITIO EN FUNCIÓN DEL VEHÍCULO.
+     *
+     * @param tipoVehiculo El tipo de vehículo.
+     * @return Un String representando el tipo de sitio.
+     */
     private String asignarSitio(String tipoVehiculo) {
         switch (tipoVehiculo) {
             case "Coche":
