@@ -1,15 +1,25 @@
 package Pantalla_ticket;
 
 import Pantalla_reserva_vehiculo.Opciones_reserva_ticket;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
 
-
+/**
+ * Esta clase implementa el estado inicial de la pantalla de visualización de tickets.
+ * Muestra la interfaz para ver los tickets registrados y tiene opciones para
+ * navegar a otros estados o regresar a la ventana de opciones de reserva de ticket.
+ */
 public class EstadoInicial implements TicketState {
 
+    /**
+     * Método para mostrar la información en el panel de la ventana.
+     * Se muestran el título, la imagen del ticket, un botón para ver el ticket
+     * y un botón para regresar a la ventana anterior.
+     *
+     * @param panelPrincipal El panel donde se agregan los componentes visuales.
+     */
     @Override
     public void mostrarInformacion(JPanel panelPrincipal) {
 
@@ -20,10 +30,10 @@ public class EstadoInicial implements TicketState {
         titulo.setFont(new Font("Arial", Font.BOLD, 17));
         panelPrincipal.add(titulo);
 
-        //AGREGAR IMAGEN TICKET
+        // AGREGAR IMAGEN TICKET
         ImageIcon imagenticket = new ImageIcon("Imagenes/FOTO TICKET.png");
         JLabel ticket = new JLabel();
-        ticket.setBounds(250,210,250,260);
+        ticket.setBounds(250, 210, 250, 260);
         ticket.setIcon(new ImageIcon(imagenticket.getImage().getScaledInstance(ticket.getWidth(), ticket.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(ticket);
 
@@ -47,7 +57,7 @@ public class EstadoInicial implements TicketState {
             }
         });
 
-        // BOTON: RETORNO
+        // BOTÓN: RETORNO
         ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);

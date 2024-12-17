@@ -1,14 +1,20 @@
 package Pantalla_calles;
 
 import Pantalla_ticket.Ticket;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.util.Random;
-
+/**
+ * Clase que representa la interfaz gráfica para gestionar la Calle_melendezvaldes_matriz.
+ * Permite visualizar una matriz de plazas disponibles, carreteras y zonas no disponibles, además de gestionar la reserva de plazas.
+ */
 public class Calle_melendezvaldes_matriz {
-
+    /**
+     * Constructor de la clase.
+     * Inicializa la ventana principal, genera la matriz de la calle y permite interactuar con la interfaz gráfica.
+     * @param tipoVehiculo Tipo de vehículo para asignar las plazas de la calle (Coche, Coche Eléctrico, Moto, Minusválido).
+     */
     public Calle_melendezvaldes_matriz(String tipoVehiculo) {
         // VENTANA
         JFrame ventanaPrincipal = new JFrame();
@@ -137,7 +143,13 @@ public class Calle_melendezvaldes_matriz {
 
         ventanaPrincipal.setVisible(true);
     }
-
+    /**
+     * Crea la matriz que representa las plazas de la calle, asignando sitios según el tipo de vehículo,
+     * marcando las zonas de carretera y las plazas no disponibles.
+     *
+     * @param tipoVehiculo Tipo de vehículo para determinar el tipo de plaza asignada.
+     * @return Una matriz bidimensional de cadenas que representa la distribución de la calle.
+     */
     private String[][] crearMatrizCalle(String tipoVehiculo) {
         int filas = 10;
         int columnas = 3;
@@ -152,7 +164,11 @@ public class Calle_melendezvaldes_matriz {
 
         return calle;
     }
-
+    /**
+     * Asigna un tipo de sitio en función del tipo de vehículo proporcionado.
+     * @param tipoVehiculo Tipo de vehículo para determinar el tipo de plaza (Coche, Coche Eléctrico, Moto, Minusválido).
+     * @return Una cadena que indica el tipo de sitio asignado (ejemplo: "Sitio Coche").
+     */
     private String asignarSitio(String tipoVehiculo) {
         switch (tipoVehiculo) {
             case "Coche":

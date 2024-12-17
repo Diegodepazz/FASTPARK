@@ -2,15 +2,23 @@ package Pantalla_registro;
 
 import Main.General_ventanas;
 import Pantalla_reserva_vehiculo.Opciones_reserva_ticket;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase Inicio_sesion que representa la ventana para que el usuario inicie sesión en la aplicación.
+ * Extiende de la clase General_ventanas.
+ */
 public class Inicio_sesion extends General_ventanas {
 
-    public Inicio_sesion(){
+    /**
+     * Constructor de la clase Inicio_sesion.
+     * Configura la ventana principal, agrega componentes como paneles, etiquetas, campos de texto,
+     * botones, y define la funcionalidad para cada botón.
+     */
+    public Inicio_sesion() {
 
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
@@ -29,7 +37,6 @@ public class Inicio_sesion extends General_ventanas {
         bienvenida.setFont(new Font("Arial", Font.BOLD, 18));
         panelPrincipal.add(bienvenida);
 
-
         //AGREGAR BOTON: INICIAR SESIÓN
         ImageIcon imagenboton = new ImageIcon("");
         JButton botonprincipal = new JButton("INICIAR SESIÓN");
@@ -39,11 +46,17 @@ public class Inicio_sesion extends General_ventanas {
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 14));
         botonprincipal.setBackground(Color.RED);
         botonprincipal.setOpaque(true);
-        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
+        // Acción del botón "INICIAR SESIÓN"
         botonprincipal.addActionListener(new ActionListener() {
+            /**
+             * Define la acción al presionar el botón "INICIAR SESIÓN".
+             * Abre la ventana Opciones_reserva_ticket y cierra la ventana actual.
+             *
+             * @param e evento de acción al presionar el botón.
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Opciones_reserva_ticket();
@@ -60,7 +73,14 @@ public class Inicio_sesion extends General_ventanas {
         botonprincipal1.setBorderPainted(false);
         panelPrincipal.add(botonprincipal1);
 
+        // Acción del botón "RETORNO"
         botonprincipal1.addActionListener(new ActionListener() {
+            /**
+             * Define la acción al presionar el botón "RETORNO".
+             * Abre la ventana Opciones_usuario y cierra la ventana actual.
+             *
+             * @param e evento de acción al presionar el botón.
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Opciones_usuario();
@@ -78,7 +98,6 @@ public class Inicio_sesion extends General_ventanas {
         campoCorreo.setBounds(265, 400, 300, 30);
         panelPrincipal.add(campoCorreo);
 
-
         // AGREGAR CAMPO CONTRASEÑA
         JLabel etiquetaContrasena = new JLabel("Contraseña:");
         etiquetaContrasena.setBounds(130, 450, 100, 30);
@@ -92,12 +111,10 @@ public class Inicio_sesion extends General_ventanas {
         //AGREGAR IMAGEN LOGO
         ImageIcon imagenlogo = new ImageIcon("Imagenes/LOGO.png");
         JLabel logo = new JLabel();
-        logo.setBounds(100,100,520,155);
+        logo.setBounds(100, 100, 520, 155);
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(logo);
 
         ventanaPrincipal.setVisible(true);
-
     }
-
 }

@@ -1,13 +1,20 @@
 package Pantalla_calles;
 
 import Main.General_ventanas;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase que representa la interfaz gráfica para la Calle_melendezvaldés.
+ * Permite al usuario seleccionar un tipo de vehículo y continuar con el proceso de reserva.
+ */
 public class Calle_melendezvaldes extends General_ventanas {
+    /**
+     * Constructor de la clase Calle_melendezvaldés.
+     * Inicializa la ventana principal y configura todos los componentes de la interfaz gráfica, como etiquetas, desplegables y botones.
+     */
     public Calle_melendezvaldes() {
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
@@ -56,6 +63,10 @@ public class Calle_melendezvaldes extends General_ventanas {
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
+        /**
+         * Acción del botón para continuar con la reserva.
+         * Obtiene el tipo de vehículo seleccionado y abre la siguiente pantalla.
+         */
         botonprincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -73,7 +84,7 @@ public class Calle_melendezvaldes extends General_ventanas {
             }
         });
 
-        // BOTON: RETORNO
+        // BOTÓN: RETORNO AL MAPA DE CALLES
         ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);
@@ -82,6 +93,10 @@ public class Calle_melendezvaldes extends General_ventanas {
         botonprincipal2.setBorderPainted(false);
         panelPrincipal.add(botonprincipal2);
 
+        /**
+         * Acción del botón para retornar al mapa de calles.
+         * Cierra la ventana actual y abre la pantalla del mapa.
+         */
         botonprincipal2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

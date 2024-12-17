@@ -4,14 +4,23 @@ import Main.General_ventanas;
 import Pantalla_calendario.Reserva_calendario;
 import Pantalla_registro.Opciones_usuario;
 import Pantalla_ticket.Ticket;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase que crea la pantalla de opciones de reserva de ticket.
+ * Permite al usuario elegir entre reservar una plaza, ver su ticket,
+ * o regresar a la pantalla de opciones de usuario.
+ */
 public class Opciones_reserva_ticket extends General_ventanas {
-    public Opciones_reserva_ticket(){
+
+    /**
+     * Constructor de la clase que crea la ventana de opciones de reserva de ticket.
+     * Inicializa la ventana, el panel y los elementos gráficos como botones y etiquetas.
+     */
+    public Opciones_reserva_ticket() {
 
         //VENTANA
         JFrame ventanaPrincipal = crearventana();
@@ -22,7 +31,7 @@ public class Opciones_reserva_ticket extends General_ventanas {
         panelPrincipal.setBackground(Color.white);
         ventanaPrincipal.add(panelPrincipal);
 
-        //TEXTO: ELIJA UNA OPCIÓN
+        //TEXTO: ELIJA UNA OPCIÓN PARA CONTINUAR
         JLabel eligeuncampo = new JLabel();
         eligeuncampo.setText("ELIJA UNA OPCIÓN PARA CONTINUAR");
         eligeuncampo.setBounds(180, 340, 500, 100);
@@ -47,13 +56,13 @@ public class Opciones_reserva_ticket extends General_ventanas {
         botonprincipal.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal.setBackground(Color.RED);
         botonprincipal.setOpaque(true);
-        //botonprincipal.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal.getWidth(), botonprincipal.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal.setBorderPainted(false);
         panelPrincipal.add(botonprincipal);
 
         botonprincipal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Abre la ventana de reserva de calendario y cierra la ventana actual
                 new Reserva_calendario();
                 ventanaPrincipal.dispose();
             }
@@ -67,13 +76,13 @@ public class Opciones_reserva_ticket extends General_ventanas {
         botonprincipal1.setFont(new Font("Arial", Font.BOLD, 16));
         botonprincipal1.setBackground(Color.RED);
         botonprincipal1.setOpaque(true);
-        //botonprincipal1.setIcon(new ImageIcon(imagenboton.getImage().getScaledInstance(botonprincipal1.getWidth(), botonprincipal1.getHeight(), Image.SCALE_SMOOTH)));
         botonprincipal1.setBorderPainted(false);
         panelPrincipal.add(botonprincipal1);
 
         botonprincipal1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Abre la ventana del ticket y cierra la ventana actual
                 new Ticket();
                 ventanaPrincipal.dispose();
             }
@@ -91,20 +100,20 @@ public class Opciones_reserva_ticket extends General_ventanas {
         botonprincipal2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Abre la ventana de opciones de usuario y cierra la ventana actual
                 new Opciones_usuario();
                 ventanaPrincipal.dispose();
             }
         });
 
-
         //AGREGAR IMAGEN LOGO
         ImageIcon imagenlogo = new ImageIcon("Imagenes/LOGO.png");
         JLabel logo = new JLabel();
-        logo.setBounds(100,100,520,155);
+        logo.setBounds(100, 100, 520, 155);
         logo.setIcon(new ImageIcon(imagenlogo.getImage().getScaledInstance(logo.getWidth(), logo.getHeight(), Image.SCALE_SMOOTH)));
         panelPrincipal.add(logo);
+
+        // Hacer visible la ventana principal
         ventanaPrincipal.setVisible(true);
-
     }
-
 }

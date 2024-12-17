@@ -7,15 +7,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Clase que representa la interfaz gráfica para la calle Galileo.
+ * Clase que representa la interfaz gráfica para la Calle_galileo.
  * Permite al usuario seleccionar un tipo de vehículo y continuar con el proceso de reserva.
- * También incluye la funcionalidad para regresar al mapa de calles.
  */
 public class Calle_galileo extends General_ventanas {
     /**
-     * Constructor de la clase.
-     * Inicializa la ventana principal y configura todos los componentes de la interfaz gráfica,
-     * como etiquetas, desplegables y botones.
+     * Constructor de la clase Calle_galileo.
+     * Inicializa la ventana principal y configura todos los componentes de la interfaz gráfica, como etiquetas, desplegables y botones.
      */
     public Calle_galileo() {
 
@@ -67,9 +65,8 @@ public class Calle_galileo extends General_ventanas {
         panelPrincipal.add(botonprincipal);
 
         /**
-         * Acción del botón "CONTINUAR CON LA RESERVA".
-         * Obtiene el tipo de vehículo seleccionado del desplegable y abre la pantalla
-         * para mostrar la matriz de la calle Galileo.
+         * Acción del botón para continuar con la reserva.
+         * Obtiene el tipo de vehículo seleccionado y abre la siguiente pantalla.
          */
         botonprincipal.addActionListener(new ActionListener() {
             @Override
@@ -90,7 +87,7 @@ public class Calle_galileo extends General_ventanas {
             }
         });
 
-        // BOTÓN: RETORNO
+        // BOTÓN: RETORNO AL MAPA DE CALLES
         ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);
@@ -100,8 +97,8 @@ public class Calle_galileo extends General_ventanas {
         panelPrincipal.add(botonprincipal2);
 
         /**
-         * Acción del botón de retorno.
-         * Regresa al mapa de calles y cierra la ventana actual.
+         * Acción del botón para retornar al mapa de calles.
+         * Cierra la ventana actual y abre la pantalla del mapa.
          */
         botonprincipal2.addActionListener(new ActionListener() {
             @Override

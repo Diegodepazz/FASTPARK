@@ -7,13 +7,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Clase que representa la interfaz gráfica para la calle Fernández de los Ríos.
+ * Clase que representa la interfaz gráfica para la Calle_fernandezdelosrios.
  * Permite al usuario seleccionar un tipo de vehículo y continuar con el proceso de reserva.
  */
 public class Calle_fernandezdelosrios extends General_ventanas {
     /**
      * Constructor de la clase Calle_fernandezdelosrios.
-     * Configura la ventana principal, paneles, componentes gráficos y su funcionalidad.
+     * Inicializa la ventana principal y configura todos los componentes de la interfaz gráfica, como etiquetas, desplegables y botones.
      */
     public Calle_fernandezdelosrios() {
 

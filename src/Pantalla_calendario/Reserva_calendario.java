@@ -16,7 +16,6 @@ import java.util.Calendar;
  * Incluye la selección de una fecha (día, mes, año) y una hora, con un calendario interactivo.
  */
 public class Reserva_calendario extends General_ventanas {
-
     /**
      * Constructor de la clase Reserva_calendario.
      * Configura la ventana principal, los paneles, componentes gráficos y su funcionalidad.

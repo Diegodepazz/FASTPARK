@@ -5,19 +5,15 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
 import java.util.Random;
-
 /**
- * Clase que representa la pantalla para visualizar la matriz de espacios de estacionamiento
- * en la calle Galileo. Permite al usuario seleccionar una plaza disponible y continuar con
- * la reserva o regresar a la pantalla anterior.
+ * Clase que representa la interfaz gráfica para gestionar la Calle_galileo_matriz.
+ * Permite visualizar una matriz de plazas disponibles, carreteras y zonas no disponibles, además de gestionar la reserva de plazas.
  */
 public class Calle_galileo_matriz {
     /**
      * Constructor de la clase.
-     * Inicializa la interfaz gráfica con la matriz de plazas de estacionamiento,
-     * un botón para continuar con la reserva y otro para regresar a la pantalla anterior.
-     *
-     * @param tipoVehiculo El tipo de vehículo seleccionado por el usuario.
+     * Inicializa la ventana principal, genera la matriz de la calle y permite interactuar con la interfaz gráfica.
+     * @param tipoVehiculo Tipo de vehículo para asignar las plazas de la calle (Coche, Coche Eléctrico, Moto, Minusválido).
      */
     public Calle_galileo_matriz(String tipoVehiculo) {
 
@@ -149,10 +145,11 @@ public class Calle_galileo_matriz {
         ventanaPrincipal.setVisible(true);
     }
     /**
-     * MÉTODO PARA CREAR LA MATRIZ DE LA CALLE BASADA EN EL TIPO DE VEHÍCULO SELECCIONADO.
+     * Crea la matriz que representa las plazas de la calle, asignando sitios según el tipo de vehículo,
+     * marcando las zonas de carretera y las plazas no disponibles.
      *
-     * @param tipoVehiculo El tipo de vehículo seleccionado.
-     * @return Una matriz de String que representa la distribución de la calle.
+     * @param tipoVehiculo Tipo de vehículo para determinar el tipo de plaza asignada.
+     * @return Una matriz bidimensional de cadenas que representa la distribución de la calle.
      */
     private String[][] crearMatrizCalle(String tipoVehiculo) {
         int filas = 10;
@@ -169,10 +166,9 @@ public class Calle_galileo_matriz {
         return calle;
     }
     /**
-     * MÉTODO PARA ASIGNAR EL TIPO DE SITIO EN FUNCIÓN DEL VEHÍCULO.
-     *
-     * @param tipoVehiculo El tipo de vehículo.
-     * @return Un String representando el tipo de sitio.
+     * Asigna un tipo de sitio en función del tipo de vehículo proporcionado.
+     * @param tipoVehiculo Tipo de vehículo para determinar el tipo de plaza (Coche, Coche Eléctrico, Moto, Minusválido).
+     * @return Una cadena que indica el tipo de sitio asignado (ejemplo: "Sitio Coche").
      */
     private String asignarSitio(String tipoVehiculo) {
         switch (tipoVehiculo) {

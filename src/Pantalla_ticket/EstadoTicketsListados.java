@@ -1,13 +1,19 @@
 package Pantalla_ticket;
 
-import Pantalla_calles.Mapa_calles;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * Clase que representa el estado donde se listan los tickets y sus respectivos estados.
+ * Permite visualizar los tickets, su estado y realizar pagos si es necesario.
+ */
 public class EstadoTicketsListados implements TicketState {
 
+    /**
+     * Método que muestra la información de los tickets registrados y permite realizar pagos.
+     * @param panelPrincipal El panel donde se agregan los elementos de la interfaz.
+     */
     @Override
     public void mostrarInformacion(JPanel panelPrincipal) {
         // TEXTO: TICKETS
@@ -41,6 +47,7 @@ public class EstadoTicketsListados implements TicketState {
             estadoLabel.setBounds(340, 200 + (i * 60), 100, 40);
             estadoLabel.setFont(new Font("Arial", Font.BOLD, 14)); // NEGRITA PARA TODOS LOS ESTADOS
 
+            // ASIGNAR COLOR DEPENDIENDO DEL ESTADO
             if (estados[i].equals("PAGADO")) {
                 estadoLabel.setForeground(new Color(0, 128, 0)); // VERDE PARA "PAGADO"
             } else {
@@ -49,7 +56,7 @@ public class EstadoTicketsListados implements TicketState {
 
             panelPrincipal.add(estadoLabel);
 
-            // CREAR UN BOTÓN DE PAGAR SOLO SI EL ESTADOS ES "PENDIENTE"
+            // CREAR UN BOTÓN DE PAGAR SOLO SI EL ESTADO ES "PENDIENTE"
             if (estados[i].equals("PENDIENTE")) {
                 JButton botonPagar = new JButton("PAGAR");
                 botonPagar.setBounds(470, 205 + (i * 60), 100, 40); // TAMAÑO ADECUADO
@@ -69,7 +76,7 @@ public class EstadoTicketsListados implements TicketState {
                     public void actionPerformed(ActionEvent e) {
                         // Cambiar el estado del ticket a "Pagado"
                         estadoLabel.setText("PAGADO");
-                        estadoLabel.setForeground(new Color(0, 128, 0)); // VERDE PARA ESTADO "APAGADO"
+                        estadoLabel.setForeground(new Color(0, 128, 0)); // VERDE PARA ESTADO "PAGADO"
                         estadoLabel.setFont(new Font("Arial", Font.BOLD, 14)); // NEGRITA
 
                         // Actualizar el texto del botón a "PAGADO"
@@ -85,26 +92,26 @@ public class EstadoTicketsListados implements TicketState {
                     }
                 });
 
-                panelPrincipal.add(botonPagar); //AÑADIR EL BOTÓN AL PANEL
+                panelPrincipal.add(botonPagar); // AÑADIR EL BOTÓN AL PANEL
             } else {
                 // SI EL TICKET YA ESTÁ PAGADO, MOSTRAR EL BOTÓN EN GRIS
                 JButton botonPagado = new JButton("PAGADO");
                 botonPagado.setBounds(470, 205 + (i * 60), 100, 40); // TAMAÑO ADECUADO
-                botonPagado.setBackground(new Color(169, 169, 169)); //COLOR GRIS
+                botonPagado.setBackground(new Color(169, 169, 169)); // COLOR GRIS
                 botonPagado.setForeground(Color.WHITE); // LETRAS EN BLANCO
                 botonPagado.setFont(new Font("Arial", Font.BOLD, 14)); // NEGRITA
                 botonPagado.setOpaque(true);
                 botonPagado.setFocusPainted(false); // ELIMINAR EL BORDE
                 botonPagado.setBorder(BorderFactory.createCompoundBorder(
                         BorderFactory.createLineBorder(new Color(169, 169, 169), 2), // BORDES REDONDOS EN GRIS
-                        BorderFactory.createEmptyBorder(5, 15, 5, 15) // CREAR UN MARGEN INTERNO
+                        BorderFactory.createEmptyBorder(5, 15, 5, 15) // CREAR UN MÁRGEN INTERNO
                 ));
                 botonPagado.setEnabled(false); // DESACTIVAR EL BOTÓN PARA QUE NO SEA INTERACTIVO
                 panelPrincipal.add(botonPagado); // AÑADIR EL BOTÓN AL PANEL
             }
         }
 
-        // BOTON: RETORNO
+        // BOTÓN: RETORNO
         ImageIcon imagenboton2 = new ImageIcon("Imagenes/BOTON_RETORNO.png");
         JButton botonprincipal2 = new JButton("");
         botonprincipal2.setFocusable(false);
@@ -116,11 +123,10 @@ public class EstadoTicketsListados implements TicketState {
         botonprincipal2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Volver al estado inicial
-                Ticket.setState(new EstadoInicial()); // Cambiar al estado inicial
-                Ticket.actualizarPantalla();          // Actualizar la pantalla
+                //VOLVER AL ESTADO INICIAL
+                Ticket.setState(new EstadoInicial());
+                Ticket.actualizarPantalla();
             }
         });
-
     }
 }
