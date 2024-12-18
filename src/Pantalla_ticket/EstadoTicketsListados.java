@@ -34,7 +34,7 @@ public class EstadoTicketsListados implements TicketState {
 
         // SIMULAR LA LISTA DE TICKETS Y SUS ESTADOS
         String[] tickets = {"TICKET 1", "TICKET 2", "TICKET 3", "TICKET 4", "TICKET 5", "TICKET 6"};
-        String[] estados = {"PAGADO", "PENDIENTE", "PENDIENTE", "PAGADO", "PAGADO", "PAGADO"};
+        String[] estados = {"PENDIENTE", "PAGADO", "PAGADO", "PAGADO", "PAGADO", "PAGADO"};
 
         for (int i = 0; i < tickets.length; i++) {
             JLabel ticketLabel = new JLabel(tickets[i]);
