@@ -1,5 +1,6 @@
 package Pantalla_calles;
 
+import Main.General_ventanas;
 import Pantalla_ticket.Ticket;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -9,7 +10,7 @@ import java.util.Random;
  * Clase que representa la interfaz gráfica para gestionar la Calle_fernándezdelosrios_matriz.
  * Permite visualizar una matriz de plazas disponibles, carreteras y zonas no disponibles, además de gestionar la reserva de plazas.
  */
-public class Calle_fernandezdelosrios_matriz {
+public class Calle_fernandezdelosrios_matriz extends General_ventanas {
     /**
      * Constructor de la clase.
      * Inicializa la ventana principal, genera la matriz de la calle y permite interactuar con la interfaz gráfica.
@@ -18,11 +19,7 @@ public class Calle_fernandezdelosrios_matriz {
     public Calle_fernandezdelosrios_matriz(String tipoVehiculo) {
 
         // VENTANA
-        JFrame ventanaPrincipal = new JFrame();
-        ventanaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ventanaPrincipal.setSize(800, 700);
-        ventanaPrincipal.setLayout(new BorderLayout());
-        ventanaPrincipal.setLocationRelativeTo(null);
+        JFrame ventanaPrincipal = crearventana();
 
         // CAMBIAR EL COLOR DE FONDO DE LA VENTANA A BLANCO
         ventanaPrincipal.getContentPane().setBackground(Color.WHITE);

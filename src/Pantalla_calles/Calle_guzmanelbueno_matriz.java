@@ -1,5 +1,6 @@
 package Pantalla_calles;
 
+import Main.General_ventanas;
 import Pantalla_ticket.Ticket;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -9,7 +10,7 @@ import java.util.Random;
  * Clase que representa la interfaz gráfica para gestionar la Calle_guzmanelbueno_matriz
  * Permite visualizar una matriz de plazas disponibles, carreteras y zonas no disponibles, además de gestionar la reserva de plazas.
  */
-public class Calle_guzmanelbueno_matriz {
+public class Calle_guzmanelbueno_matriz extends General_ventanas {
     /**
      * Constructor de la clase.
      * Inicializa la ventana principal, genera la matriz de la calle y permite interactuar con la interfaz gráfica.

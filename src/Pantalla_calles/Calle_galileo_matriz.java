@@ -1,5 +1,6 @@
 package Pantalla_calles;
 
+import Main.General_ventanas;
 import Pantalla_ticket.Ticket;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -9,7 +10,7 @@ import java.util.Random;
  * Clase que representa la interfaz gráfica para gestionar la Calle_galileo_matriz.
  * Permite visualizar una matriz de plazas disponibles, carreteras y zonas no disponibles, además de gestionar la reserva de plazas.
  */
-public class Calle_galileo_matriz {
+public class Calle_galileo_matriz extends General_ventanas {
     /**
      * Constructor de la clase.
      * Inicializa la ventana principal, genera la matriz de la calle y permite interactuar con la interfaz gráfica.
@@ -18,11 +19,7 @@ public class Calle_galileo_matriz {
     public Calle_galileo_matriz(String tipoVehiculo) {
 
         // VENTANA
-        JFrame ventanaPrincipal = new JFrame();
-        ventanaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ventanaPrincipal.setSize(800, 700);
-        ventanaPrincipal.setLayout(new BorderLayout());
-        ventanaPrincipal.setLocationRelativeTo(null);
+        JFrame ventanaPrincipal = crearventana();
 
         // CAMBIAR EL COLOR DE FONDO DE LA VENTANA A BLANCO
         ventanaPrincipal.getContentPane().setBackground(Color.WHITE);
@@ -111,13 +108,13 @@ public class Calle_galileo_matriz {
             int columnaSeleccionada = tablaCalle.getSelectedColumn();
 
             if (filaSeleccionada == -1 || columnaSeleccionada == -1) {
-                JOptionPane.showMessageDialog(ventanaPrincipal, "POR FAVOR, SELECCIONA UNA PLAZA.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(ventanaPrincipal, "POR FAVOR, SELECCIONA UNA PLAZA.", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
                 String valorCelda = (String) tablaCalle.getValueAt(filaSeleccionada, columnaSeleccionada);
                 if ("No disponible".equals(valorCelda) || "Carretera".equals(valorCelda)) {
-                    JOptionPane.showMessageDialog(ventanaPrincipal, "ESPACIO NO DISPONIBLE. SELECCIONE OTRA PLAZA ", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(ventanaPrincipal, "Espacio no disponible. Seleccione otra plaza ", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(ventanaPrincipal, "RESERVA REALIZADA CORRECTAMENTE.");
+                    JOptionPane.showMessageDialog(ventanaPrincipal, "Reserva realizada correctamente.");
                     new Ticket(); // CONTINUAR CON LA SIGUIENTE PANTALLA
                     ventanaPrincipal.dispose();
                 }

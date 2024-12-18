@@ -1,5 +1,6 @@
 package Pantalla_calles;
 
+import Main.General_ventanas;
 import Pantalla_ticket.Ticket;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -9,19 +10,16 @@ import java.util.Random;
  * Clase que representa la interfaz gráfica para gestionar la Calle_melendezvaldes_matriz.
  * Permite visualizar una matriz de plazas disponibles, carreteras y zonas no disponibles, además de gestionar la reserva de plazas.
  */
-public class Calle_melendezvaldes_matriz {
+public class Calle_melendezvaldes_matriz extends General_ventanas {
     /**
      * Constructor de la clase.
      * Inicializa la ventana principal, genera la matriz de la calle y permite interactuar con la interfaz gráfica.
      * @param tipoVehiculo Tipo de vehículo para asignar las plazas de la calle (Coche, Coche Eléctrico, Moto, Minusválido).
      */
     public Calle_melendezvaldes_matriz(String tipoVehiculo) {
+
         // VENTANA
-        JFrame ventanaPrincipal = new JFrame();
-        ventanaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ventanaPrincipal.setSize(800, 700);
-        ventanaPrincipal.setLayout(new BorderLayout());
-        ventanaPrincipal.setLocationRelativeTo(null);
+        JFrame ventanaPrincipal = crearventana();
 
         // Cambiar el color de fondo de la ventana a blanco
         ventanaPrincipal.getContentPane().setBackground(Color.WHITE);
