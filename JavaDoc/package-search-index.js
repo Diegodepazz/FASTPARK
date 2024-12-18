@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"Main"},{"l":"Pantalla_calendario"},{"l":"Pantalla_calles"},{"l":"Pantalla_inicio_app"},{"l":"Pantalla_registro"},{"l":"Pantalla_reserva_vehiculo"},{"l":"Pantalla_ticket"}];updateSearchResults();
